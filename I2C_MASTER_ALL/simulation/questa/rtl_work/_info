@@ -1,0 +1,163 @@
+m255
+K4
+z2
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/simulation/questa
+Edff_synk
+Z1 w1731790430
+Z2 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z3 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z4 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 2
+R0
+Z5 8C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/dff_synk.vhd
+Z6 FC:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/dff_synk.vhd
+l0
+L5 1
+Vj3KG_`WU`P`>OSL2I0diF3
+!s100 T`zOMD^gQRhNS0Z`cgh681
+Z7 OL;C;2023.3;77
+31
+Z8 !s110 1746607313
+!i10b 1
+Z9 !s108 1746607313.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/dff_synk.vhd|
+Z11 !s107 C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/dff_synk.vhd|
+!i113 0
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Acomp
+R2
+R3
+R4
+DEx4 work 8 dff_synk 0 22 j3KG_`WU`P`>OSL2I0diF3
+!i122 2
+l14
+L12 12
+V[f_WVH2[[?2;A_7KeFD5i3
+!s100 1e1RD:9FdU;f6I4QlWcRJ0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Ei2c_master
+Z14 w1746604585
+R2
+R3
+R4
+!i122 1
+R0
+Z15 8C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master.vhd
+Z16 FC:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master.vhd
+l0
+L5 1
+VQ4f0oj_l2B<QNN?;H=l1A2
+!s100 BX``Ga_6ELHMJEo8<kJWT3
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master.vhd|
+Z18 !s107 C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master.vhd|
+!i113 0
+R12
+R13
+Artl
+R2
+R3
+R4
+DEx4 work 10 i2c_master 0 22 Q4f0oj_l2B<QNN?;H=l1A2
+!i122 1
+l61
+L31 256
+Vk6ED;:[;R8LaK2LjS?HIH2
+!s100 6lNc]VefbV4O>Kkm4nmkE2
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 0
+R12
+R13
+Ei2c_master_all
+Z19 w1746606174
+R2
+R3
+R4
+!i122 0
+R0
+Z20 8C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd
+Z21 FC:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd
+l0
+L5 1
+V5HTPM8JOK3H_hV6ckUZ[h1
+!s100 eVmR[Bz]SM[:ZHaYRRUYf0
+R7
+31
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd|
+Z23 !s107 C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd|
+!i113 0
+R12
+R13
+Artl
+R2
+R3
+R4
+DEx4 work 14 i2c_master_all 0 22 5HTPM8JOK3H_hV6ckUZ[h1
+!i122 0
+l91
+L24 118
+V@gERiHD6M4QNVX`Y:mH2c1
+!s100 g1EePS=6AXeffUh7D]0T=0
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 0
+R12
+R13
+Ei2c_master_reg
+w1746602203
+R2
+R3
+R4
+!i122 3
+R0
+8C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master_reg.vhd
+FC:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master_reg.vhd
+l0
+L5 1
+Vd^KSIM2FDFcFcX3]X^RHj2
+!s100 FORJlbMfnRhAbm@chgiDF3
+R7
+31
+R8
+!i10b 1
+R9
+!s90 -reportprogress|300|-93|-work|work|C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master_reg.vhd|
+!s107 C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master_reg.vhd|
+!i113 0
+R12
+R13

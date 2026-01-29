@@ -1,0 +1,77 @@
+m255
+K4
+z2
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Quartus/ELE111 H2024/Prosjektoppgave/RS_232C_JJK_v3/simulation/questa
+Ers_232c_jjk
+w1732018309
+Z1 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z2 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z3 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+!i122 1
+R0
+8C:/Quartus/ELE111 H2024/Prosjektoppgave/RS_232C_JJK_v3/RS_232C_JJK.vhd
+FC:/Quartus/ELE111 H2024/Prosjektoppgave/RS_232C_JJK_v3/RS_232C_JJK.vhd
+l0
+L5 1
+VY29McP^GQC`iAn[MN`Fkn0
+!s100 YLJ3L?lW;80diSN5F]MWT0
+Z4 OL;C;2023.3;77
+31
+!s110 1732020653
+!i10b 1
+Z5 !s108 1732020652.000000
+!s90 -reportprogress|300|-93|-work|work|C:/Quartus/ELE111 H2024/Prosjektoppgave/RS_232C_JJK_v3/RS_232C_JJK.vhd|
+!s107 C:/Quartus/ELE111 H2024/Prosjektoppgave/RS_232C_JJK_v3/RS_232C_JJK.vhd|
+!i113 0
+Z6 o-93 -work work
+Z7 tExplicit 1 CvgOpt 0
+Esender
+Z8 w1731935204
+R1
+R2
+R3
+!i122 0
+R0
+Z9 8C:/Quartus/ELE111 H2024/Prosjektoppgave/RS_232C_JJK_v3/sender.vhd
+Z10 FC:/Quartus/ELE111 H2024/Prosjektoppgave/RS_232C_JJK_v3/sender.vhd
+l0
+L5 1
+VQLQ4fDoX2Q;LfX?>D=6OX2
+!s100 R07U`WD5:De^00iS52gjY0
+R4
+31
+Z11 !s110 1732020652
+!i10b 1
+R5
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Quartus/ELE111 H2024/Prosjektoppgave/RS_232C_JJK_v3/sender.vhd|
+Z13 !s107 C:/Quartus/ELE111 H2024/Prosjektoppgave/RS_232C_JJK_v3/sender.vhd|
+!i113 0
+R6
+R7
+Astruct
+R1
+R2
+R3
+DEx4 work 6 sender 0 22 QLQ4fDoX2Q;LfX?>D=6OX2
+!i122 0
+l50
+L21 143
+V30L5_[<@Y<BglRA``MB;83
+!s100 Z1KL>OnoQOI2aGSAQoC<Y1
+R4
+31
+R11
+!i10b 1
+R5
+R12
+R13
+!i113 0
+R6
+R7

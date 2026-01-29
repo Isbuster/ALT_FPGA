@@ -1,0 +1,24 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst my_MCU.nios.reset_bridge -pg 1
+preplace inst my_MCU.jtag -pg 1 -lvl 3 -y 210
+preplace inst my_MCU.I2C_MASTER_REV3_0 -pg 1 -lvl 3 -y 30
+preplace inst my_MCU.nios.clock_bridge -pg 1
+preplace inst my_MCU.nios.cpu -pg 1
+preplace inst my_MCU.ram -pg 1 -lvl 3 -y 130
+preplace inst my_MCU.pio_out -pg 1 -lvl 3 -y 410
+preplace inst my_MCU.clk_0 -pg 1 -lvl 1 -y 200
+preplace inst my_MCU.nios -pg 1 -lvl 2 -y 140
+preplace inst my_MCU -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst my_MCU.pio_in -pg 1 -lvl 3 -y 310
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)I2C_MASTER_REV3_0.conduit_end,(SLAVE)my_MCU.i2c) 1 0 3 NJ 40 NJ 40 NJ
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)pio_in.external_connection,(SLAVE)my_MCU.pio_in_ext) 1 0 3 NJ 340 NJ 340 NJ
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)clk_0.clk_in,(SLAVE)my_MCU.clk) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>my_MCU</net_container>(SLAVE)I2C_MASTER_REV3_0.avalon_slave_0,(SLAVE)ram.s1,(MASTER)nios.data_master,(SLAVE)jtag.avalon_jtag_slave,(SLAVE)nios.debug_mem_slave,(SLAVE)pio_in.s1,(SLAVE)pio_out.s1,(MASTER)nios.instruction_master) 1 1 2 330 60 710
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)my_MCU.reset) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>my_MCU</net_container>(MASTER)nios.debug_reset_request,(SLAVE)jtag.reset,(SLAVE)I2C_MASTER_REV3_0.reset_sink,(SLAVE)nios.reset,(SLAVE)pio_out.reset,(SLAVE)pio_in.reset,(SLAVE)ram.reset1,(MASTER)clk_0.clk_reset) 1 1 2 310 100 730
+preplace netloc FAN_OUT<net_container>my_MCU</net_container>(SLAVE)I2C_MASTER_REV3_0.clock,(SLAVE)pio_out.clk,(SLAVE)ram.clk1,(SLAVE)jtag.clk,(SLAVE)pio_in.clk,(SLAVE)nios.clk,(MASTER)clk_0.clk) 1 1 2 290 80 750
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)pio_out.external_connection,(SLAVE)my_MCU.pio_out_ext) 1 0 3 NJ 440 NJ 440 NJ
+preplace netloc POINT_TO_POINT<net_container>my_MCU</net_container>(SLAVE)jtag.irq,(MASTER)nios.irq) 1 2 1 690
+levelinfo -pg 1 0 80 960
+levelinfo -hier my_MCU 90 120 450 800 950

@@ -1,0 +1,1337 @@
+Analysis & Synthesis report for I2C_MASTER_ALL
+Wed May  7 10:23:39 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|MODE
+  9. State Machine - |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|STATE
+ 10. State Machine - |I2C_MASTER_ALL|I2C_MASTER:c_i2c_master|PHASE
+ 11. State Machine - |I2C_MASTER_ALL|I2C_MASTER:c_i2c_master|STATE
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed May  7 10:23:39 2025          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; I2C_MASTER_ALL                                 ;
+; Top-level Entity Name              ; I2C_MASTER_ALL                                 ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 999                                            ;
+;     Total combinational functions  ; 930                                            ;
+;     Dedicated logic registers      ; 449                                            ;
+; Total registers                    ; 449                                            ;
+; Total pins                         ; 74                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; I2C_MASTER_ALL     ; I2C_MASTER_ALL     ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------+---------+
+; I2C_MASTER_ALL.vhd               ; yes             ; User VHDL File        ; C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd ;         ;
+; i2c_master.vhd                   ; yes             ; Auto-Found VHDL File  ; C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master.vhd     ;         ;
+; dff_synk.vhd                     ; yes             ; Auto-Found VHDL File  ; C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/dff_synk.vhd       ;         ;
+; i2c_master_reg.vhd               ; yes             ; Auto-Found VHDL File  ; C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master_reg.vhd ;         ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 999       ;
+;                                             ;           ;
+; Total combinational functions               ; 930       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 537       ;
+;     -- 3 input functions                    ; 342       ;
+;     -- <=2 input functions                  ; 51        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 911       ;
+;     -- arithmetic mode                      ; 19        ;
+;                                             ;           ;
+; Total registers                             ; 449       ;
+;     -- Dedicated logic registers            ; 449       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 74        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 449       ;
+; Total fan-out                               ; 4971      ;
+; Average fan-out                             ; 3.25      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Entity Name    ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+----------------+--------------+
+; |I2C_MASTER_ALL                      ; 930 (1)             ; 449 (0)                   ; 0           ; 0            ; 0       ; 0         ; 74   ; 0            ; |I2C_MASTER_ALL                                             ; I2C_MASTER_ALL ; work         ;
+;    |I2C_MASTER:c_i2c_master|         ; 79 (79)             ; 58 (56)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |I2C_MASTER_ALL|I2C_MASTER:c_i2c_master                     ; I2C_MASTER     ; work         ;
+;       |dff_synk:c_dff_synk|          ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |I2C_MASTER_ALL|I2C_MASTER:c_i2c_master|dff_synk:c_dff_synk ; dff_synk       ; work         ;
+;    |I2C_MASTER_REG:c_i2c_master_reg| ; 850 (850)           ; 391 (391)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg             ; I2C_MASTER_REG ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|MODE                                                                    ;
++--------------------+--------------+--------------------+---------------+--------------+------------+---------------+--------------------+
+; Name               ; MODE.mOP_CNT ; MODE.mRX_DATA_FIFO ; MODE.mTFR_CMD ; MODE.mSTATUS ; MODE.mCTRL ; MODE.mRX_DATA ; MODE.mTFR_CMD_FIFO ;
++--------------------+--------------+--------------------+---------------+--------------+------------+---------------+--------------------+
+; MODE.mTFR_CMD_FIFO ; 0            ; 0                  ; 0             ; 0            ; 0          ; 0             ; 0                  ;
+; MODE.mRX_DATA      ; 0            ; 0                  ; 0             ; 0            ; 0          ; 1             ; 1                  ;
+; MODE.mCTRL         ; 0            ; 0                  ; 0             ; 0            ; 1          ; 0             ; 1                  ;
+; MODE.mSTATUS       ; 0            ; 0                  ; 0             ; 1            ; 0          ; 0             ; 1                  ;
+; MODE.mTFR_CMD      ; 0            ; 0                  ; 1             ; 0            ; 0          ; 0             ; 1                  ;
+; MODE.mRX_DATA_FIFO ; 0            ; 1                  ; 0             ; 0            ; 0          ; 0             ; 1                  ;
+; MODE.mOP_CNT       ; 1            ; 0                  ; 0             ; 0            ; 0          ; 0             ; 1                  ;
++--------------------+--------------+--------------------+---------------+--------------+------------+---------------+--------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------+
+; State Machine - |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|STATE        ;
++----------------+-------------+----------------+----------------+-------------+
+; Name           ; STATE.sSTOP ; STATE.sWAITING ; STATE.sSETTING ; STATE.sIDLE ;
++----------------+-------------+----------------+----------------+-------------+
+; STATE.sIDLE    ; 0           ; 0              ; 0              ; 0           ;
+; STATE.sSETTING ; 0           ; 0              ; 1              ; 1           ;
+; STATE.sWAITING ; 0           ; 1              ; 0              ; 1           ;
+; STATE.sSTOP    ; 1           ; 0              ; 0              ; 1           ;
++----------------+-------------+----------------+----------------+-------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |I2C_MASTER_ALL|I2C_MASTER:c_i2c_master|PHASE ;
++--------------+------------+------------+----------------------+
+; Name         ; PHASE.pEND ; PHASE.pMID ; PHASE.pFIRST         ;
++--------------+------------+------------+----------------------+
+; PHASE.pFIRST ; 0          ; 0          ; 0                    ;
+; PHASE.pMID   ; 0          ; 1          ; 1                    ;
+; PHASE.pEND   ; 1          ; 0          ; 1                    ;
++--------------+------------+------------+----------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------+
+; State Machine - |I2C_MASTER_ALL|I2C_MASTER:c_i2c_master|STATE                                           ;
++-----------------+-------------+-------------+------------+-----------------+--------------+-------------+
+; Name            ; STATE.sSTOP ; STATE.sHOLD ; STATE.sACK ; STATE.sTRANSFER ; STATE.sSTART ; STATE.sIDLE ;
++-----------------+-------------+-------------+------------+-----------------+--------------+-------------+
+; STATE.sIDLE     ; 0           ; 0           ; 0          ; 0               ; 0            ; 0           ;
+; STATE.sSTART    ; 0           ; 0           ; 0          ; 0               ; 1            ; 1           ;
+; STATE.sTRANSFER ; 0           ; 0           ; 0          ; 1               ; 0            ; 1           ;
+; STATE.sACK      ; 0           ; 0           ; 1          ; 0               ; 0            ; 1           ;
+; STATE.sHOLD     ; 0           ; 1           ; 0          ; 0               ; 0            ; 1           ;
+; STATE.sSTOP     ; 1           ; 0           ; 0          ; 0               ; 0            ; 1           ;
++-----------------+-------------+-------------+------------+-----------------+--------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                      ;
++------------------------------------------------------+------------------------------------------------------------------+
+; Register name                                        ; Reason for Removal                                               ;
++------------------------------------------------------+------------------------------------------------------------------+
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[8..15]        ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt_int[0..7]     ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|EN                   ; Stuck at VCC due to stuck port data_in                           ;
+; I2C_MASTER:c_i2c_master|IDLE                         ; Stuck at VCC due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[0..7]         ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|baud_rate_now[3]     ; Merged with I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[3]         ;
+; I2C_MASTER_REG:c_i2c_master_reg|baud_rate_now[4]     ; Merged with I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[4]         ;
+; I2C_MASTER_REG:c_i2c_master_reg|baud_rate_now[6]     ; Merged with I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[6]         ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][8]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][9]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][8]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][9]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][8]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][9]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][8]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][9]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][8]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][9]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][11] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][12] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][13] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][14] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][15] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][16] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][17] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][18] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][19] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][20] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][21] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][22] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][23] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][24] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][25] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][26] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][27] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][28] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][29] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][30] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][31] ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][8]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][9]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][11]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][12]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][13]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][14]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][15]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][16]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][17]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][18]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][19]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][20]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][21]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][22]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][23]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][24]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][25]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][26]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][27]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][28]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][29]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][30]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][31]  ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][8]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][9]   ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ;
+; I2C_MASTER_REG:c_i2c_master_reg|wr_n_internal        ; Merged with I2C_MASTER_REG:c_i2c_master_reg|WR_N                 ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][10] ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]  ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|readdata[18..31]     ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|baud_rate_now[0]     ; Merged with I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[0]         ;
+; I2C_MASTER_REG:c_i2c_master_reg|baud_rate_now[1]     ; Merged with I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[1]         ;
+; I2C_MASTER_REG:c_i2c_master_reg|baud_rate_now[2]     ; Merged with I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[2]         ;
+; I2C_MASTER_REG:c_i2c_master_reg|baud_rate_now[5]     ; Merged with I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[5]         ;
+; I2C_MASTER_REG:c_i2c_master_reg|baud_rate_now[7]     ; Merged with I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[7]         ;
+; I2C_MASTER_REG:c_i2c_master_reg|standard_mode        ; Merged with I2C_MASTER_REG:c_i2c_master_reg|fast_mode            ;
+; I2C_MASTER_REG:c_i2c_master_reg|baud_rate_cstm[0..7] ; Lost fanout                                                      ;
+; I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[1,5]       ; Stuck at VCC due to stuck port data_in                           ;
+; I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[4,6]       ; Stuck at GND due to stuck port data_in                           ;
+; I2C_MASTER:c_i2c_master|baud_limit[1,5]              ; Stuck at VCC due to stuck port data_in                           ;
+; I2C_MASTER:c_i2c_master|STATE.sSTOP                  ; Stuck at GND due to stuck port data_in                           ;
+; Total Number of Removed Registers = 801              ;                                                                  ;
++------------------------------------------------------+------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                   ;
++------------------------------------------------------+---------------------------+----------------------------------------------------------------------------+
+; Register name                                        ; Reason for Removal        ; Registers Removed due to This Register                                     ;
++------------------------------------------------------+---------------------------+----------------------------------------------------------------------------+
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][10]  ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|readdata[24],                              ;
+;                                                      ; due to stuck port data_in ; I2C_MASTER_REG:c_i2c_master_reg|readdata[25],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[26],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[27],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[28],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[29],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[30],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[31]                               ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][10]  ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10],                       ;
+;                                                      ; due to stuck port data_in ; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10],                       ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][10],                       ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][10],                       ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][10],                       ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][10],                       ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][10]                        ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][10] ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|readdata[18],                              ;
+;                                                      ; due to stuck port data_in ; I2C_MASTER_REG:c_i2c_master_reg|readdata[19],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[20],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[21],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[22],                              ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|readdata[23]                               ;
+; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][10]  ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][10],                       ;
+;                                                      ; due to stuck port data_in ; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][10],                       ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][10],                       ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][10],                       ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][10],                       ;
+;                                                      ;                           ; I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][10]                        ;
+; I2C_MASTER_REG:c_i2c_master_reg|EN                   ; Stuck at VCC              ; I2C_MASTER:c_i2c_master|IDLE, I2C_MASTER:c_i2c_master|baud_limit[5],       ;
+;                                                      ; due to stuck port data_in ; I2C_MASTER:c_i2c_master|baud_limit[1], I2C_MASTER:c_i2c_master|STATE.sSTOP ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt_int[7]        ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[7]                                  ;
+;                                                      ; due to stuck port data_in ;                                                                            ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt_int[6]        ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[6]                                  ;
+;                                                      ; due to stuck port data_in ;                                                                            ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt_int[5]        ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[5]                                  ;
+;                                                      ; due to stuck port data_in ;                                                                            ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt_int[4]        ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[4]                                  ;
+;                                                      ; due to stuck port data_in ;                                                                            ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt_int[3]        ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[3]                                  ;
+;                                                      ; due to stuck port data_in ;                                                                            ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt_int[2]        ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[2]                                  ;
+;                                                      ; due to stuck port data_in ;                                                                            ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt_int[1]        ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[1]                                  ;
+;                                                      ; due to stuck port data_in ;                                                                            ;
+; I2C_MASTER_REG:c_i2c_master_reg|op_cnt_int[0]        ; Stuck at GND              ; I2C_MASTER_REG:c_i2c_master_reg|op_cnt[0]                                  ;
+;                                                      ; due to stuck port data_in ;                                                                            ;
++------------------------------------------------------+---------------------------+----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 449   ;
+; Number of registers using Synchronous Clear  ; 279   ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 394   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------+
+; Inverted Register Statistics                           ;
++----------------------------------------------+---------+
+; Inverted Register                            ; Fan out ;
++----------------------------------------------+---------+
+; I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[0] ; 2       ;
+; I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[2] ; 2       ;
+; I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[7] ; 2       ;
+; I2C_MASTER:c_i2c_master|baud_limit[6]        ; 4       ;
+; I2C_MASTER:c_i2c_master|baud_limit[7]        ; 2       ;
+; I2C_MASTER:c_i2c_master|baud_limit[3]        ; 5       ;
+; I2C_MASTER:c_i2c_master|baud_limit[4]        ; 4       ;
+; I2C_MASTER:c_i2c_master|baud_limit[0]        ; 2       ;
+; I2C_MASTER:c_i2c_master|baud_limit[2]        ; 2       ;
+; Total number of inverted registers = 9       ;         ;
++----------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|errors_tot_int[1]        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|errors_index_int[0]      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE[3]             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[15][7]      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|stop_amnts[1]            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[0][1]       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[14][7]      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[13][1]      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[12][0]      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[11][1]      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[10][0]      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[9][2]       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[8][2]       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[7][7]       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[6][4]       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[5][7]       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[4][7]       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[3][3]       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[2][2]       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data[1][6]       ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_rx_data_amnt_int[3] ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd_amnt_int[3] ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|readdata[16]             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][9]      ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[15][5]      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][9]      ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[14][0]      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][10]     ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[13][3]      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][10]     ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[12][4]      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][10]     ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[11][4]      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][9]      ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[10][2]      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][10]      ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[9][2]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][10]      ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[8][7]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][9]       ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[7][7]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][10]      ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[6][4]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][10]      ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[5][0]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][9]       ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[4][1]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][9]       ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[3][6]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][9]       ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[2][7]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][9]       ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[1][4]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][9]       ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|fifo_tfr_cmd[0][6]       ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|readdata[1]              ;
+; 36:1               ; 5 bits    ; 120 LEs       ; 110 LEs              ; 10 LEs                 ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|readdata[12]             ;
+; 52:1               ; 2 bits    ; 68 LEs        ; 68 LEs               ; 0 LEs                  ; Yes        ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|readdata[9]              ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|BAUD_RATE                ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |I2C_MASTER_ALL|I2C_MASTER:c_i2c_master|PHASE                            ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|MODE                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |I2C_MASTER_ALL|I2C_MASTER_REG:c_i2c_master_reg|STATE                    ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |I2C_MASTER_ALL|I2C_MASTER:c_i2c_master|STATE                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 74                          ;
+; cycloneiii_ff         ; 449                         ;
+;     ENA               ; 141                         ;
+;     ENA SCLR          ; 248                         ;
+;     ENA SCLR SLD      ; 5                           ;
+;     SCLR              ; 11                          ;
+;     SCLR SLD          ; 15                          ;
+;     plain             ; 29                          ;
+; cycloneiii_io_obuf    ; 1                           ;
+; cycloneiii_lcell_comb ; 930                         ;
+;     arith             ; 19                          ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 7                           ;
+;     normal            ; 911                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 335                         ;
+;         4 data inputs ; 537                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.52                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Wed May  7 10:23:30 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off I2C_MASTER_ALL -c I2C_MASTER_ALL
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file i2c_master_all.vhd
+    Info (12022): Found design unit 1: I2C_MASTER_ALL-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 24
+    Info (12023): Found entity 1: I2C_MASTER_ALL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 5
+Info (12127): Elaborating entity "I2C_MASTER_ALL" for the top level hierarchy
+Warning (12125): Using design file i2c_master.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: I2C_MASTER-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master.vhd Line: 31
+    Info (12023): Found entity 1: I2C_MASTER File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master.vhd Line: 5
+Info (12128): Elaborating entity "I2C_MASTER" for hierarchy "I2C_MASTER:c_i2c_master" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 92
+Warning (10541): VHDL Signal Declaration warning at i2c_master.vhd(39): used implicit default value for signal "stop_internal" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master.vhd Line: 39
+Warning (12125): Using design file dff_synk.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: dff_synk-comp File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/dff_synk.vhd Line: 12
+    Info (12023): Found entity 1: dff_synk File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/dff_synk.vhd Line: 5
+Info (12128): Elaborating entity "dff_synk" for hierarchy "I2C_MASTER:c_i2c_master|dff_synk:c_dff_synk" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master.vhd Line: 279
+Warning (12125): Using design file i2c_master_reg.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: I2C_MASTER_REG-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master_reg.vhd Line: 33
+    Info (12023): Found entity 1: I2C_MASTER_REG File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master_reg.vhd Line: 5
+Info (12128): Elaborating entity "I2C_MASTER_REG" for hierarchy "I2C_MASTER_REG:c_i2c_master_reg" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 115
+Warning (10540): VHDL Signal Declaration warning at i2c_master_reg.vhd(58): used explicit default value for signal "baud_standard_mode" because signal was never assigned a value File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master_reg.vhd Line: 58
+Warning (10540): VHDL Signal Declaration warning at i2c_master_reg.vhd(59): used explicit default value for signal "baud_fast_mode" because signal was never assigned a value File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/i2c_master_reg.vhd Line: 59
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "readdata[18]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[19]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[20]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[21]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[22]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[23]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[24]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[25]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[26]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[27]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[28]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[29]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[30]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+    Warning (13410): Pin "readdata[31]" is stuck at GND File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 21 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "writedata[10]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[11]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[12]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[13]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[14]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[15]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[16]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[17]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[18]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[19]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[20]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[21]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[22]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[23]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[24]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[25]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[26]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[27]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[28]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[29]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+    Warning (15610): No output dependent on input pin "writedata[30]" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd Line: 15
+Info (21057): Implemented 1075 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 40 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 1001 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 4943 megabytes
+    Info: Processing ended: Wed May  7 10:23:39 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
+
+

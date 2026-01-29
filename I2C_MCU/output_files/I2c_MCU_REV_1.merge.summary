@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Fri May  9 09:12:01 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : I2c_MCU_REV_1
+Top-level Entity Name : Oblig3_TOP
+Family : Cyclone IV E
+Total logic elements : 4,073
+    Total combinational functions : 3,436
+    Dedicated logic registers : 2,195
+Total registers : 2195
+Total pins : 37
+Total virtual pins : 0
+Total memory bits : 2,501,632
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

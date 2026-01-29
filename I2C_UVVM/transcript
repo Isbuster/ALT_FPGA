@@ -1,0 +1,958 @@
+do ../../UVVM_Light-master/script/compile.do ../../UVVM_Light-master/ ./sim
+# 
+# User specified uvvm_light and target directory
+# 
+# 
+# 
+# === Compiling UVVM Util to directory: ./sim
+# 
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/types_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/adaptations_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/string_methods_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/protected_types_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/global_signals_and_shared_variables_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/hierarchy_linked_list_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/alert_hierarchy_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/license_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/methods_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/bfm_common_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/generic_queue_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/data_queue_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/data_fifo_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/data_stack_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/rand_pkg.vhd
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1415): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1416): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1417): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1418): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1419): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1420): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1421): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1422): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1423): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1424): (vcom-1246) Range 1 to 0 is null.
+# ** Warning: ../../UVVM_Light-master/src_util/rand_pkg.vhd(1425): (vcom-1246) Range 1 to 0 is null.
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/func_cov_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util ../../UVVM_Light-master//src_util/uvvm_util_context.vhd
+# 
+# 
+# 
+# === Compiling UVVM BFMs to directory: ./sim
+# 
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/avalon_mm_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/avalon_st_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/axilite_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/axistream_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/axi_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/gmii_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/gpio_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/i2c_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/rgmii_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/sbi_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/spi_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/uart_bfm_pkg.vhd
+# eval vcom -quiet -suppress 1346,1236,1090 -2008 -work uvvm_util  ../../UVVM_Light-master//src_bfm/wishbone_bfm_pkg.vhd
+vsim work.i2c_master_all_tb_uvvm
+# vsim work.i2c_master_all_tb_uvvm 
+# Start time: 18:59:58 on May 27,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading uvvm_util.types_pkg(body)
+# Loading uvvm_util.adaptations_pkg(body)
+# Loading ieee.math_real(body)
+# Loading uvvm_util.string_methods_pkg(body)
+# Loading uvvm_util.protected_types_pkg(body)
+# Loading uvvm_util.global_signals_and_shared_variables_pkg
+# Loading uvvm_util.hierarchy_linked_list_pkg(body)
+# Loading uvvm_util.license_pkg(body)
+# Loading std.env(body)
+# Loading uvvm_util.alert_hierarchy_pkg(body)
+# Loading uvvm_util.methods_pkg(body)
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Root: /
+# ** Warning: (vsim-3479) Time unit 'fs' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Root: /
+# ** Note: 
+# 
+# 
+# *****************************************************************************************************
+#  This is a *** LICENSED PRODUCT *** as given in the LICENSE.TXT in the root directory.
+# *****************************************************************************************************
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# ** Note: 
+# 
+# =====================================================================================================
+# =====================================================================================================
+# This info section may be turned off via C_SHOW_UVVM_UTILITY_LIBRARY_INFO in adaptations_pkg.vhd
+# 
+# Important Simulator setup: 
+# - Set simulator to break on severity 'FAILURE' 
+# - Set simulator transcript to a monospace font (e.g. Courier new)
+# 
+# UVVM Utility Library setup:
+# - It is recommended to go through the two powerpoint presentations provided with the download
+# - There is a Quick-Reference in the doc-directory
+# - In order to change layout or behaviour - please check the src*/adaptations_pkg.vhd
+#   This is intended for personal or company customization
+# 
+# License conditions are given in LICENSE.TXT
+# =====================================================================================================
+# =====================================================================================================
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# Loading uvvm_util.bfm_common_pkg(body)
+# Loading uvvm_util.generic_queue_pkg(body)
+# Loading uvvm_util.rand_pkg(body)
+# Loading uvvm_util.func_cov_pkg(body)
+# Loading uvvm_util.sbi_bfm_pkg(body)
+# Loading uvvm_util.i2c_bfm_pkg(body)
+# Loading work.i2c_master_all_tb_uvvm(behav)#1
+# Loading work.i2c_master_all(rtl)#1
+add wave -position insertpoint  \
+sim:/i2c_master_all_tb_uvvm/c_I2C_MASTER_ALL/c_i2c_master/SCL \
+sim:/i2c_master_all_tb_uvvm/c_I2C_MASTER_ALL/c_i2c_master/SDA
+run 1 us
+# UVVM:      
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      ***  REPORT OF GLOBAL CTRL ***
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:                                IGNORE    STOP_LIMIT
+# UVVM:                NOTE         :  REGARD         0
+# UVVM:                TB_NOTE      :  REGARD         0
+# UVVM:                WARNING      :  REGARD         0
+# UVVM:                TB_WARNING   :  REGARD         0
+# UVVM:                MANUAL_CHECK :  REGARD         0
+# UVVM:                ERROR        :  REGARD         0
+# UVVM:                TB_ERROR     :  REGARD         1
+# UVVM:                FAILURE      :  REGARD         1
+# UVVM:                TB_FAILURE   :  REGARD         1
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      
+# UVVM: ID_LOG_MSG_CTRL                    0.0 ns  TB seq.                        enable_log_msg(ALL_MESSAGES). 
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                         0.0 ns  TB seq.                        Start Simulation of TB for I2C_MASTER_ALL
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_CLOCK_GEN                       0.0 ns  TB seq.                        Starting clock IRQC TB clock
+# UVVM: ID_GEN_PULSE                     220.0 ns  TB seq.                        Pulsed to 1 for 20 ns. 'Reset'
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                       420.0 ns  TB seq.                        Sjekk registere etter reset
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_BFM                           445.0 ns  TB seq.                        sbi_check(A:x"0", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD'
+# UVVM: ID_BFM                           665.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA'
+# UVVM: ID_BFM                           885.0 ns  TB seq.                        sbi_check(A:x"2", x"000001A7")=> OK, read data = x"1A7". 'sjekk CTRL'
+quit -sim
+# End time: 19:03:50 on May 27,2025, Elapsed time: 0:03:52
+# Errors: 0, Warnings: 3
+vsim work.i2c_master_all_tb_uvvm
+# vsim work.i2c_master_all_tb_uvvm 
+# Start time: 19:04:27 on May 27,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading uvvm_util.types_pkg(body)
+# Loading uvvm_util.adaptations_pkg(body)
+# Loading ieee.math_real(body)
+# Loading uvvm_util.string_methods_pkg(body)
+# Loading uvvm_util.protected_types_pkg(body)
+# Loading uvvm_util.global_signals_and_shared_variables_pkg
+# Loading uvvm_util.hierarchy_linked_list_pkg(body)
+# Loading uvvm_util.license_pkg(body)
+# Loading std.env(body)
+# Loading uvvm_util.alert_hierarchy_pkg(body)
+# Loading uvvm_util.methods_pkg(body)
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Root: /
+# ** Warning: (vsim-3479) Time unit 'fs' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Root: /
+# ** Note: 
+# 
+# 
+# *****************************************************************************************************
+#  This is a *** LICENSED PRODUCT *** as given in the LICENSE.TXT in the root directory.
+# *****************************************************************************************************
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# ** Note: 
+# 
+# =====================================================================================================
+# =====================================================================================================
+# This info section may be turned off via C_SHOW_UVVM_UTILITY_LIBRARY_INFO in adaptations_pkg.vhd
+# 
+# Important Simulator setup: 
+# - Set simulator to break on severity 'FAILURE' 
+# - Set simulator transcript to a monospace font (e.g. Courier new)
+# 
+# UVVM Utility Library setup:
+# - It is recommended to go through the two powerpoint presentations provided with the download
+# - There is a Quick-Reference in the doc-directory
+# - In order to change layout or behaviour - please check the src*/adaptations_pkg.vhd
+#   This is intended for personal or company customization
+# 
+# License conditions are given in LICENSE.TXT
+# =====================================================================================================
+# =====================================================================================================
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# Loading uvvm_util.bfm_common_pkg(body)
+# Loading uvvm_util.generic_queue_pkg(body)
+# Loading uvvm_util.rand_pkg(body)
+# Loading uvvm_util.func_cov_pkg(body)
+# Loading uvvm_util.sbi_bfm_pkg(body)
+# Loading uvvm_util.i2c_bfm_pkg(body)
+# Loading work.i2c_master_all_tb_uvvm(behav)#1
+# Loading work.i2c_master_all(rtl)#1
+# Compile of dff_synk.vhd was successful.
+# Compile of I2C_MASTER.vhd was successful.
+# Compile of I2C_MASTER_ALL.vhd was successful.
+# Compile of I2C_MASTER_ALL_TB_UVVM.vhd was successful with warnings.
+# Compile of I2C_MASTER_REG.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+add wave -position insertpoint  \
+sim:/i2c_master_all_tb_uvvm/CLK \
+sim:/i2c_master_all_tb_uvvm/RST \
+sim:/i2c_master_all_tb_uvvm/scl \
+sim:/i2c_master_all_tb_uvvm/sda
+run 1 us
+# UVVM:      
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      ***  REPORT OF GLOBAL CTRL ***
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:                                IGNORE    STOP_LIMIT
+# UVVM:                NOTE         :  REGARD         0
+# UVVM:                TB_NOTE      :  REGARD         0
+# UVVM:                WARNING      :  REGARD         0
+# UVVM:                TB_WARNING   :  REGARD         0
+# UVVM:                MANUAL_CHECK :  REGARD         0
+# UVVM:                ERROR        :  REGARD         0
+# UVVM:                TB_ERROR     :  REGARD         1
+# UVVM:                FAILURE      :  REGARD         1
+# UVVM:                TB_FAILURE   :  REGARD         1
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      
+# UVVM: ID_LOG_MSG_CTRL                    0.0 ns  TB seq.                        enable_log_msg(ALL_MESSAGES). 
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                         0.0 ns  TB seq.                        Start Simulation of TB for I2C_MASTER_ALL
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_CLOCK_GEN                       0.0 ns  TB seq.                        Starting clock IRQC TB clock
+# UVVM: ID_GEN_PULSE                     220.0 ns  TB seq.                        Pulsed to 1 for 20 ns. 'Reset'
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                       420.0 ns  TB seq.                        Sjekk registere etter reset
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_BFM                           445.0 ns  TB seq.                        sbi_check(A:x"0", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD'
+# UVVM: ID_BFM                           665.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA'
+# UVVM: ID_BFM                           885.0 ns  TB seq.                        sbi_check(A:x"2", x"000001A7")=> OK, read data = x"1A7". 'sjekk CTRL'
+# Compile of dff_synk.vhd was successful.
+# Compile of I2C_MASTER.vhd was successful.
+# Compile of I2C_MASTER_ALL.vhd was successful.
+# Compile of I2C_MASTER_ALL_TB_UVVM.vhd was successful with warnings.
+# Compile of I2C_MASTER_REG.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading uvvm_util.types_pkg(body)
+# Loading uvvm_util.adaptations_pkg(body)
+# Loading ieee.math_real(body)
+# Loading uvvm_util.string_methods_pkg(body)
+# Loading uvvm_util.protected_types_pkg(body)
+# Loading uvvm_util.global_signals_and_shared_variables_pkg
+# Loading uvvm_util.hierarchy_linked_list_pkg(body)
+# Loading uvvm_util.license_pkg(body)
+# Loading std.env(body)
+# Loading uvvm_util.alert_hierarchy_pkg(body)
+# Loading uvvm_util.methods_pkg(body)
+# ** Note: 
+# 
+# 
+# *****************************************************************************************************
+#  This is a *** LICENSED PRODUCT *** as given in the LICENSE.TXT in the root directory.
+# *****************************************************************************************************
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# ** Note: 
+# 
+# =====================================================================================================
+# =====================================================================================================
+# This info section may be turned off via C_SHOW_UVVM_UTILITY_LIBRARY_INFO in adaptations_pkg.vhd
+# 
+# Important Simulator setup: 
+# - Set simulator to break on severity 'FAILURE' 
+# - Set simulator transcript to a monospace font (e.g. Courier new)
+# 
+# UVVM Utility Library setup:
+# - It is recommended to go through the two powerpoint presentations provided with the download
+# - There is a Quick-Reference in the doc-directory
+# - In order to change layout or behaviour - please check the src*/adaptations_pkg.vhd
+#   This is intended for personal or company customization
+# 
+# License conditions are given in LICENSE.TXT
+# =====================================================================================================
+# =====================================================================================================
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# Loading uvvm_util.bfm_common_pkg(body)
+# Loading uvvm_util.generic_queue_pkg(body)
+# Loading uvvm_util.rand_pkg(body)
+# Loading uvvm_util.func_cov_pkg(body)
+# Loading uvvm_util.sbi_bfm_pkg(body)
+# Loading uvvm_util.i2c_bfm_pkg(body)
+# Loading work.i2c_master_all_tb_uvvm(behav)#1
+# Loading work.i2c_master_all(rtl)#1
+# Compile of dff_synk.vhd was successful.
+# Compile of I2C_MASTER.vhd was successful.
+# Compile of I2C_MASTER_ALL.vhd was successful.
+# Compile of I2C_MASTER_ALL_TB_UVVM.vhd was successful with warnings.
+# Compile of I2C_MASTER_REG.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: 
+# 
+# 
+# *****************************************************************************************************
+#  This is a *** LICENSED PRODUCT *** as given in the LICENSE.TXT in the root directory.
+# *****************************************************************************************************
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# ** Note: 
+# 
+# =====================================================================================================
+# =====================================================================================================
+# This info section may be turned off via C_SHOW_UVVM_UTILITY_LIBRARY_INFO in adaptations_pkg.vhd
+# 
+# Important Simulator setup: 
+# - Set simulator to break on severity 'FAILURE' 
+# - Set simulator transcript to a monospace font (e.g. Courier new)
+# 
+# UVVM Utility Library setup:
+# - It is recommended to go through the two powerpoint presentations provided with the download
+# - There is a Quick-Reference in the doc-directory
+# - In order to change layout or behaviour - please check the src*/adaptations_pkg.vhd
+#   This is intended for personal or company customization
+# 
+# License conditions are given in LICENSE.TXT
+# =====================================================================================================
+# =====================================================================================================
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+run 1 us
+# UVVM:      
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      ***  REPORT OF GLOBAL CTRL ***
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:                                IGNORE    STOP_LIMIT
+# UVVM:                NOTE         :  REGARD         0
+# UVVM:                TB_NOTE      :  REGARD         0
+# UVVM:                WARNING      :  REGARD         0
+# UVVM:                TB_WARNING   :  REGARD         0
+# UVVM:                MANUAL_CHECK :  REGARD         0
+# UVVM:                ERROR        :  REGARD         0
+# UVVM:                TB_ERROR     :  REGARD         1
+# UVVM:                FAILURE      :  REGARD         1
+# UVVM:                TB_FAILURE   :  REGARD         1
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      
+# UVVM: ID_LOG_MSG_CTRL                    0.0 ns  TB seq.                        enable_log_msg(ALL_MESSAGES). 
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                         0.0 ns  TB seq.                        Start Simulation of TB for I2C_MASTER_ALL
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_CLOCK_GEN                       0.0 ns  TB seq.                        Starting clock IRQC TB clock
+# UVVM: ID_GEN_PULSE                     220.0 ns  TB seq.                        Pulsed to 1 for 20 ns. 'Reset'
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                       420.0 ns  TB seq.                        Sjekk registere etter reset
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_BFM                           445.0 ns  TB seq.                        sbi_check(A:x"0", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD'
+# UVVM: ID_BFM                           665.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA'
+# UVVM: ID_BFM                           885.0 ns  TB seq.                        sbi_check(A:x"2", x"000001A7")=> OK, read data = x"1A7". 'sjekk CTRL'
+run 1 us
+# UVVM: ID_BFM                          1105.0 ns  TB seq.                        sbi_check(A:x"3", x"00000100")=> OK, read data = x"100". 'sjekk STATUS'
+# UVVM: ID_BFM                          1325.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD_FIFO'
+# UVVM: ID_BFM                          1545.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                          1765.0 ns  TB seq.                        sbi_check(A:x"6", x"00000000")=> OK, read data = x"00000000". 'sjekk OP_CNT'
+# UVVM: ID_BFM                          1985.0 ns  TB seq.                        sbi_write(A:x"0", x"00000000") completed. 'Skriver til TFR_CMD'
+run 1000 us
+# UVVM: ID_BFM                          2205.0 ns  TB seq.                        sbi_write(A:x"0", x"00000111") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2425.0 ns  TB seq.                        sbi_write(A:x"0", x"00000001") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2645.0 ns  TB seq.                        sbi_write(A:x"0", x"00000002") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2865.0 ns  TB seq.                        sbi_write(A:x"0", x"00000103") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          3085.0 ns  TB seq.                        sbi_write(A:x"2", x"00000200") completed. 'Skriver til CTRL'
+# UVVM: ID_BFM                          3905.0 ns  TB seq.                        sbi_check(A:x"0", x"00000103")=> OK, read data = x"103". 'sjekk TFR_CMD for nyeste verdi'
+# UVVM: ID_BFM                          4125.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA for nyeste verdi'
+# UVVM: ID_BFM                          4345.0 ns  TB seq.                        sbi_check(A:x"2", x"000002A7")=> OK, read data = x"2A7". 'sjekk CTRL etter at fast mode er
+# UVVM:                                                                           startet'
+# UVVM: ID_BFM                          4565.0 ns  TB seq.                        sbi_check(A:x"3", x"00000000")=> OK, read data = x"00000000". 'sjekk STATUS'
+# UVVM: ID_BFM                          4785.0 ns  TB seq.                        sbi_check(A:x"4", x"00011104")=> OK, read data = x"11104". 'sjekk TFR_CMD_FIFO nå som første
+# UVVM:                                                                           TFR_CMD er sendt'
+# UVVM: ID_BFM                          5005.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                        605025.0 ns  TB seq.                        sbi_check(A:x"6", x"00000005")=> OK, read data = x"5". 'sjekk OP_CNT'
+run 1000 us
+# UVVM: ID_BFM                       1205045.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk RESERVED'
+# UVVM:      
+# UVVM:      ====================================================================================================================================================================
+# UVVM:      *** FINAL SUMMARY OF ALL ALERTS ***
+# UVVM:      ====================================================================================================================================================================
+# UVVM:                                REGARDED   EXPECTED  IGNORED      Comment?
+# UVVM:                NOTE         :      0         0         0         ok
+# UVVM:                TB_NOTE      :      0         0         0         ok
+# UVVM:                WARNING      :      0         0         0         ok
+# UVVM:                TB_WARNING   :      0         0         0         ok
+# UVVM:                MANUAL_CHECK :      0         0         0         ok
+# UVVM:                ERROR        :      0         0         0         ok
+# UVVM:                TB_ERROR     :      0         0         0         ok
+# UVVM:                FAILURE      :      0         0         0         ok
+# UVVM:                TB_FAILURE   :      0         0         0         ok
+# UVVM:      ====================================================================================================================================================================
+# UVVM:      >> Simulation SUCCESS: No mismatch between counted and expected serious alerts
+# UVVM:      ====================================================================================================================================================================
+# UVVM:      
+# UVVM:      
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                   1205045.0 ns  TB seq.                        SIMULATION COMPLETED
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: 
+# 
+# 
+# *****************************************************************************************************
+#  This is a *** LICENSED PRODUCT *** as given in the LICENSE.TXT in the root directory.
+# *****************************************************************************************************
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# ** Note: 
+# 
+# =====================================================================================================
+# =====================================================================================================
+# This info section may be turned off via C_SHOW_UVVM_UTILITY_LIBRARY_INFO in adaptations_pkg.vhd
+# 
+# Important Simulator setup: 
+# - Set simulator to break on severity 'FAILURE' 
+# - Set simulator transcript to a monospace font (e.g. Courier new)
+# 
+# UVVM Utility Library setup:
+# - It is recommended to go through the two powerpoint presentations provided with the download
+# - There is a Quick-Reference in the doc-directory
+# - In order to change layout or behaviour - please check the src*/adaptations_pkg.vhd
+#   This is intended for personal or company customization
+# 
+# License conditions are given in LICENSE.TXT
+# =====================================================================================================
+# =====================================================================================================
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+run 200 us
+# UVVM:      
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      ***  REPORT OF GLOBAL CTRL ***
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:                                IGNORE    STOP_LIMIT
+# UVVM:                NOTE         :  REGARD         0
+# UVVM:                TB_NOTE      :  REGARD         0
+# UVVM:                WARNING      :  REGARD         0
+# UVVM:                TB_WARNING   :  REGARD         0
+# UVVM:                MANUAL_CHECK :  REGARD         0
+# UVVM:                ERROR        :  REGARD         0
+# UVVM:                TB_ERROR     :  REGARD         1
+# UVVM:                FAILURE      :  REGARD         1
+# UVVM:                TB_FAILURE   :  REGARD         1
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      
+# UVVM: ID_LOG_MSG_CTRL                    0.0 ns  TB seq.                        enable_log_msg(ALL_MESSAGES). 
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                         0.0 ns  TB seq.                        Start Simulation of TB for I2C_MASTER_ALL
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_CLOCK_GEN                       0.0 ns  TB seq.                        Starting clock IRQC TB clock
+# UVVM: ID_GEN_PULSE                     220.0 ns  TB seq.                        Pulsed to 1 for 20 ns. 'Reset'
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                       420.0 ns  TB seq.                        Sjekk registere etter reset
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_BFM                           445.0 ns  TB seq.                        sbi_check(A:x"0", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD'
+# UVVM: ID_BFM                           665.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA'
+# UVVM: ID_BFM                           885.0 ns  TB seq.                        sbi_check(A:x"2", x"000001A7")=> OK, read data = x"1A7". 'sjekk CTRL'
+# UVVM: ID_BFM                          1105.0 ns  TB seq.                        sbi_check(A:x"3", x"00000100")=> OK, read data = x"100". 'sjekk STATUS'
+# UVVM: ID_BFM                          1325.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD_FIFO'
+# UVVM: ID_BFM                          1545.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                          1765.0 ns  TB seq.                        sbi_check(A:x"6", x"00000000")=> OK, read data = x"00000000". 'sjekk OP_CNT'
+# UVVM: ID_BFM                          1985.0 ns  TB seq.                        sbi_write(A:x"0", x"00000000") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2205.0 ns  TB seq.                        sbi_write(A:x"0", x"00000111") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2425.0 ns  TB seq.                        sbi_write(A:x"0", x"00000001") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2645.0 ns  TB seq.                        sbi_write(A:x"0", x"00000002") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2865.0 ns  TB seq.                        sbi_write(A:x"0", x"00000103") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          3085.0 ns  TB seq.                        sbi_write(A:x"2", x"00000200") completed. 'Skriver til CTRL'
+# UVVM: ID_BFM                          3905.0 ns  TB seq.                        sbi_check(A:x"0", x"00000103")=> OK, read data = x"103". 'sjekk TFR_CMD for nyeste verdi'
+# UVVM: ID_BFM                          4125.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA for nyeste verdi'
+# UVVM: ID_BFM                          4345.0 ns  TB seq.                        sbi_check(A:x"2", x"000002A7")=> OK, read data = x"2A7". 'sjekk CTRL etter at fast mode er
+# UVVM:                                                                           startet'
+# UVVM: ID_BFM                          4565.0 ns  TB seq.                        sbi_check(A:x"3", x"00000000")=> OK, read data = x"00000000". 'sjekk STATUS'
+# UVVM: ID_BFM                          4785.0 ns  TB seq.                        sbi_check(A:x"4", x"00011104")=> OK, read data = x"11104". 'sjekk TFR_CMD_FIFO nå som første
+# UVVM:                                                                           TFR_CMD er sendt'
+# UVVM: ID_BFM                          5005.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+# UVVM: ID_BFM                        605025.0 ns  TB seq.                        sbi_check(A:x"6", x"00000005")=> OK, read data = x"5". 'sjekk OP_CNT'
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+# UVVM: ID_BFM                       1205045.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk RESERVED'
+# UVVM:      
+# UVVM:      ====================================================================================================================================================================
+# UVVM:      *** FINAL SUMMARY OF ALL ALERTS ***
+# UVVM:      ====================================================================================================================================================================
+# UVVM:                                REGARDED   EXPECTED  IGNORED      Comment?
+# UVVM:                NOTE         :      0         0         0         ok
+# UVVM:                TB_NOTE      :      0         0         0         ok
+# UVVM:                WARNING      :      0         0         0         ok
+# UVVM:                TB_WARNING   :      0         0         0         ok
+# UVVM:                MANUAL_CHECK :      0         0         0         ok
+# UVVM:                ERROR        :      0         0         0         ok
+# UVVM:                TB_ERROR     :      0         0         0         ok
+# UVVM:                FAILURE      :      0         0         0         ok
+# UVVM:                TB_FAILURE   :      0         0         0         ok
+# UVVM:      ====================================================================================================================================================================
+# UVVM:      >> Simulation SUCCESS: No mismatch between counted and expected serious alerts
+# UVVM:      ====================================================================================================================================================================
+# UVVM:      
+# UVVM:      
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                   1205045.0 ns  TB seq.                        SIMULATION COMPLETED
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+add wave -position insertpoint  \
+sim:/i2c_master_all_tb_uvvm/c_I2C_MASTER_ALL/c_i2c_master_reg/fifo_rx_data
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: 
+# 
+# 
+# *****************************************************************************************************
+#  This is a *** LICENSED PRODUCT *** as given in the LICENSE.TXT in the root directory.
+# *****************************************************************************************************
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# ** Note: 
+# 
+# =====================================================================================================
+# =====================================================================================================
+# This info section may be turned off via C_SHOW_UVVM_UTILITY_LIBRARY_INFO in adaptations_pkg.vhd
+# 
+# Important Simulator setup: 
+# - Set simulator to break on severity 'FAILURE' 
+# - Set simulator transcript to a monospace font (e.g. Courier new)
+# 
+# UVVM Utility Library setup:
+# - It is recommended to go through the two powerpoint presentations provided with the download
+# - There is a Quick-Reference in the doc-directory
+# - In order to change layout or behaviour - please check the src*/adaptations_pkg.vhd
+#   This is intended for personal or company customization
+# 
+# License conditions are given in LICENSE.TXT
+# =====================================================================================================
+# =====================================================================================================
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+run 1000 us
+# UVVM:      
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      ***  REPORT OF GLOBAL CTRL ***
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:                                IGNORE    STOP_LIMIT
+# UVVM:                NOTE         :  REGARD         0
+# UVVM:                TB_NOTE      :  REGARD         0
+# UVVM:                WARNING      :  REGARD         0
+# UVVM:                TB_WARNING   :  REGARD         0
+# UVVM:                MANUAL_CHECK :  REGARD         0
+# UVVM:                ERROR        :  REGARD         0
+# UVVM:                TB_ERROR     :  REGARD         1
+# UVVM:                FAILURE      :  REGARD         1
+# UVVM:                TB_FAILURE   :  REGARD         1
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      
+# UVVM: ID_LOG_MSG_CTRL                    0.0 ns  TB seq.                        enable_log_msg(ALL_MESSAGES). 
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                         0.0 ns  TB seq.                        Start Simulation of TB for I2C_MASTER_ALL
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_CLOCK_GEN                       0.0 ns  TB seq.                        Starting clock IRQC TB clock
+# UVVM: ID_GEN_PULSE                     220.0 ns  TB seq.                        Pulsed to 1 for 20 ns. 'Reset'
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                       420.0 ns  TB seq.                        Sjekk registere etter reset
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_BFM                           445.0 ns  TB seq.                        sbi_check(A:x"0", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD'
+# UVVM: ID_BFM                           665.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA'
+# UVVM: ID_BFM                           885.0 ns  TB seq.                        sbi_check(A:x"2", x"000001A7")=> OK, read data = x"1A7". 'sjekk CTRL'
+# UVVM: ID_BFM                          1105.0 ns  TB seq.                        sbi_check(A:x"3", x"00000100")=> OK, read data = x"100". 'sjekk STATUS'
+# UVVM: ID_BFM                          1325.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD_FIFO'
+# UVVM: ID_BFM                          1545.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                          1765.0 ns  TB seq.                        sbi_check(A:x"6", x"00000000")=> OK, read data = x"00000000". 'sjekk OP_CNT'
+# UVVM: ID_BFM                          1985.0 ns  TB seq.                        sbi_write(A:x"0", x"00000000") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2205.0 ns  TB seq.                        sbi_write(A:x"0", x"00000111") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2425.0 ns  TB seq.                        sbi_write(A:x"0", x"00000001") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2645.0 ns  TB seq.                        sbi_write(A:x"0", x"00000002") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2865.0 ns  TB seq.                        sbi_write(A:x"0", x"00000103") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          3085.0 ns  TB seq.                        sbi_write(A:x"2", x"00000200") completed. 'Skriver til CTRL'
+# UVVM: ID_BFM                          3905.0 ns  TB seq.                        sbi_check(A:x"0", x"00000103")=> OK, read data = x"103". 'sjekk TFR_CMD for nyeste verdi'
+# UVVM: ID_BFM                          4125.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA for nyeste verdi'
+# UVVM: ID_BFM                          4345.0 ns  TB seq.                        sbi_check(A:x"2", x"000002A7")=> OK, read data = x"2A7". 'sjekk CTRL etter at fast mode er
+# UVVM:                                                                           startet'
+# UVVM: ID_BFM                          4565.0 ns  TB seq.                        sbi_check(A:x"3", x"00000000")=> OK, read data = x"00000000". 'sjekk STATUS'
+# UVVM: ID_BFM                          4785.0 ns  TB seq.                        sbi_check(A:x"4", x"00011104")=> OK, read data = x"11104". 'sjekk TFR_CMD_FIFO nå som første
+# UVVM:                                                                           TFR_CMD er sendt'
+# UVVM: ID_BFM                          5005.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                        605025.0 ns  TB seq.                        sbi_check(A:x"6", x"00000005")=> OK, read data = x"5". 'sjekk OP_CNT'
+add wave -position insertpoint  \
+sim:/i2c_master_all_tb_uvvm/c_I2C_MASTER_ALL/c_i2c_master_reg/fifo_tfr_cmd
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: 
+# 
+# 
+# *****************************************************************************************************
+#  This is a *** LICENSED PRODUCT *** as given in the LICENSE.TXT in the root directory.
+# *****************************************************************************************************
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# ** Note: 
+# 
+# =====================================================================================================
+# =====================================================================================================
+# This info section may be turned off via C_SHOW_UVVM_UTILITY_LIBRARY_INFO in adaptations_pkg.vhd
+# 
+# Important Simulator setup: 
+# - Set simulator to break on severity 'FAILURE' 
+# - Set simulator transcript to a monospace font (e.g. Courier new)
+# 
+# UVVM Utility Library setup:
+# - It is recommended to go through the two powerpoint presentations provided with the download
+# - There is a Quick-Reference in the doc-directory
+# - In order to change layout or behaviour - please check the src*/adaptations_pkg.vhd
+#   This is intended for personal or company customization
+# 
+# License conditions are given in LICENSE.TXT
+# =====================================================================================================
+# =====================================================================================================
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+run 1000 us
+# UVVM:      
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      ***  REPORT OF GLOBAL CTRL ***
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:                                IGNORE    STOP_LIMIT
+# UVVM:                NOTE         :  REGARD         0
+# UVVM:                TB_NOTE      :  REGARD         0
+# UVVM:                WARNING      :  REGARD         0
+# UVVM:                TB_WARNING   :  REGARD         0
+# UVVM:                MANUAL_CHECK :  REGARD         0
+# UVVM:                ERROR        :  REGARD         0
+# UVVM:                TB_ERROR     :  REGARD         1
+# UVVM:                FAILURE      :  REGARD         1
+# UVVM:                TB_FAILURE   :  REGARD         1
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      
+# UVVM: ID_LOG_MSG_CTRL                    0.0 ns  TB seq.                        enable_log_msg(ALL_MESSAGES). 
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                         0.0 ns  TB seq.                        Start Simulation of TB for I2C_MASTER_ALL
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_CLOCK_GEN                       0.0 ns  TB seq.                        Starting clock IRQC TB clock
+# UVVM: ID_GEN_PULSE                     220.0 ns  TB seq.                        Pulsed to 1 for 20 ns. 'Reset'
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                       420.0 ns  TB seq.                        Sjekk registere etter reset
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_BFM                           445.0 ns  TB seq.                        sbi_check(A:x"0", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD'
+# UVVM: ID_BFM                           665.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA'
+# UVVM: ID_BFM                           885.0 ns  TB seq.                        sbi_check(A:x"2", x"000001A7")=> OK, read data = x"1A7". 'sjekk CTRL'
+# UVVM: ID_BFM                          1105.0 ns  TB seq.                        sbi_check(A:x"3", x"00000100")=> OK, read data = x"100". 'sjekk STATUS'
+# UVVM: ID_BFM                          1325.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD_FIFO'
+# UVVM: ID_BFM                          1545.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                          1765.0 ns  TB seq.                        sbi_check(A:x"6", x"00000000")=> OK, read data = x"00000000". 'sjekk OP_CNT'
+# UVVM: ID_BFM                          1985.0 ns  TB seq.                        sbi_write(A:x"0", x"00000000") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2205.0 ns  TB seq.                        sbi_write(A:x"0", x"00000111") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2425.0 ns  TB seq.                        sbi_write(A:x"0", x"00000001") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2645.0 ns  TB seq.                        sbi_write(A:x"0", x"00000002") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2865.0 ns  TB seq.                        sbi_write(A:x"0", x"00000103") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          3085.0 ns  TB seq.                        sbi_write(A:x"2", x"00000200") completed. 'Skriver til CTRL'
+# UVVM: ID_BFM                          3905.0 ns  TB seq.                        sbi_check(A:x"0", x"00000103")=> OK, read data = x"103". 'sjekk TFR_CMD for nyeste verdi'
+# UVVM: ID_BFM                          4125.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA for nyeste verdi'
+# UVVM: ID_BFM                          4345.0 ns  TB seq.                        sbi_check(A:x"2", x"000002A7")=> OK, read data = x"2A7". 'sjekk CTRL etter at fast mode er
+# UVVM:                                                                           startet'
+# UVVM: ID_BFM                          4565.0 ns  TB seq.                        sbi_check(A:x"3", x"00000000")=> OK, read data = x"00000000". 'sjekk STATUS'
+# UVVM: ID_BFM                          4785.0 ns  TB seq.                        sbi_check(A:x"4", x"00011104")=> OK, read data = x"11104". 'sjekk TFR_CMD_FIFO nå som første
+# UVVM:                                                                           TFR_CMD er sendt'
+# UVVM: ID_BFM                          5005.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                        605025.0 ns  TB seq.                        sbi_check(A:x"6", x"00000005")=> OK, read data = x"5". 'sjekk OP_CNT'
+add wave -position insertpoint  \
+sim:/i2c_master_all_tb_uvvm/c_I2C_MASTER_ALL/c_i2c_master_reg/wr_n_internal
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: 
+# 
+# 
+# *****************************************************************************************************
+#  This is a *** LICENSED PRODUCT *** as given in the LICENSE.TXT in the root directory.
+# *****************************************************************************************************
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# ** Note: 
+# 
+# =====================================================================================================
+# =====================================================================================================
+# This info section may be turned off via C_SHOW_UVVM_UTILITY_LIBRARY_INFO in adaptations_pkg.vhd
+# 
+# Important Simulator setup: 
+# - Set simulator to break on severity 'FAILURE' 
+# - Set simulator transcript to a monospace font (e.g. Courier new)
+# 
+# UVVM Utility Library setup:
+# - It is recommended to go through the two powerpoint presentations provided with the download
+# - There is a Quick-Reference in the doc-directory
+# - In order to change layout or behaviour - please check the src*/adaptations_pkg.vhd
+#   This is intended for personal or company customization
+# 
+# License conditions are given in LICENSE.TXT
+# =====================================================================================================
+# =====================================================================================================
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+run 1000 us
+# UVVM:      
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      ***  REPORT OF GLOBAL CTRL ***
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:                                IGNORE    STOP_LIMIT
+# UVVM:                NOTE         :  REGARD         0
+# UVVM:                TB_NOTE      :  REGARD         0
+# UVVM:                WARNING      :  REGARD         0
+# UVVM:                TB_WARNING   :  REGARD         0
+# UVVM:                MANUAL_CHECK :  REGARD         0
+# UVVM:                ERROR        :  REGARD         0
+# UVVM:                TB_ERROR     :  REGARD         1
+# UVVM:                FAILURE      :  REGARD         1
+# UVVM:                TB_FAILURE   :  REGARD         1
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      
+# UVVM: ID_LOG_MSG_CTRL                    0.0 ns  TB seq.                        enable_log_msg(ALL_MESSAGES). 
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                         0.0 ns  TB seq.                        Start Simulation of TB for I2C_MASTER_ALL
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_CLOCK_GEN                       0.0 ns  TB seq.                        Starting clock IRQC TB clock
+# UVVM: ID_GEN_PULSE                     220.0 ns  TB seq.                        Pulsed to 1 for 20 ns. 'Reset'
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                       420.0 ns  TB seq.                        Sjekk registere etter reset
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_BFM                           445.0 ns  TB seq.                        sbi_check(A:x"0", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD'
+# UVVM: ID_BFM                           665.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA'
+# UVVM: ID_BFM                           885.0 ns  TB seq.                        sbi_check(A:x"2", x"000001A7")=> OK, read data = x"1A7". 'sjekk CTRL'
+# UVVM: ID_BFM                          1105.0 ns  TB seq.                        sbi_check(A:x"3", x"00000100")=> OK, read data = x"100". 'sjekk STATUS'
+# UVVM: ID_BFM                          1325.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD_FIFO'
+# UVVM: ID_BFM                          1545.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                          1765.0 ns  TB seq.                        sbi_check(A:x"6", x"00000000")=> OK, read data = x"00000000". 'sjekk OP_CNT'
+# UVVM: ID_BFM                          1985.0 ns  TB seq.                        sbi_write(A:x"0", x"00000000") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2205.0 ns  TB seq.                        sbi_write(A:x"0", x"00000111") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2425.0 ns  TB seq.                        sbi_write(A:x"0", x"00000001") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2645.0 ns  TB seq.                        sbi_write(A:x"0", x"00000002") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2865.0 ns  TB seq.                        sbi_write(A:x"0", x"00000103") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          3085.0 ns  TB seq.                        sbi_write(A:x"2", x"00000200") completed. 'Skriver til CTRL'
+# UVVM: ID_BFM                          3905.0 ns  TB seq.                        sbi_check(A:x"0", x"00000103")=> OK, read data = x"103". 'sjekk TFR_CMD for nyeste verdi'
+# UVVM: ID_BFM                          4125.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA for nyeste verdi'
+# UVVM: ID_BFM                          4345.0 ns  TB seq.                        sbi_check(A:x"2", x"000002A7")=> OK, read data = x"2A7". 'sjekk CTRL etter at fast mode er
+# UVVM:                                                                           startet'
+# UVVM: ID_BFM                          4565.0 ns  TB seq.                        sbi_check(A:x"3", x"00000000")=> OK, read data = x"00000000". 'sjekk STATUS'
+# UVVM: ID_BFM                          4785.0 ns  TB seq.                        sbi_check(A:x"4", x"00011104")=> OK, read data = x"11104". 'sjekk TFR_CMD_FIFO nå som første
+# UVVM:                                                                           TFR_CMD er sendt'
+# UVVM: ID_BFM                          5005.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                        605025.0 ns  TB seq.                        sbi_check(A:x"6", x"00000005")=> OK, read data = x"5". 'sjekk OP_CNT'
+# Compile of dff_synk.vhd was successful.
+# Compile of I2C_MASTER.vhd was successful.
+# Compile of I2C_MASTER_ALL.vhd was successful.
+# Compile of I2C_MASTER_ALL_TB_UVVM.vhd was successful with warnings.
+# Compile of I2C_MASTER_REG.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading uvvm_util.types_pkg(body)
+# Loading uvvm_util.adaptations_pkg(body)
+# Loading ieee.math_real(body)
+# Loading uvvm_util.string_methods_pkg(body)
+# Loading uvvm_util.protected_types_pkg(body)
+# Loading uvvm_util.global_signals_and_shared_variables_pkg
+# Loading uvvm_util.hierarchy_linked_list_pkg(body)
+# Loading uvvm_util.license_pkg(body)
+# Loading std.env(body)
+# Loading uvvm_util.alert_hierarchy_pkg(body)
+# Loading uvvm_util.methods_pkg(body)
+# ** Note: 
+# 
+# 
+# *****************************************************************************************************
+#  This is a *** LICENSED PRODUCT *** as given in the LICENSE.TXT in the root directory.
+# *****************************************************************************************************
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# ** Note: 
+# 
+# =====================================================================================================
+# =====================================================================================================
+# This info section may be turned off via C_SHOW_UVVM_UTILITY_LIBRARY_INFO in adaptations_pkg.vhd
+# 
+# Important Simulator setup: 
+# - Set simulator to break on severity 'FAILURE' 
+# - Set simulator transcript to a monospace font (e.g. Courier new)
+# 
+# UVVM Utility Library setup:
+# - It is recommended to go through the two powerpoint presentations provided with the download
+# - There is a Quick-Reference in the doc-directory
+# - In order to change layout or behaviour - please check the src*/adaptations_pkg.vhd
+#   This is intended for personal or company customization
+# 
+# License conditions are given in LICENSE.TXT
+# =====================================================================================================
+# =====================================================================================================
+# 
+# 
+#    Time: 0 ns  Iteration: 0  Region: /methods_pkg File: ../../UVVM_Light-master/src_util/methods_pkg.vhd
+# Loading uvvm_util.bfm_common_pkg(body)
+# Loading uvvm_util.generic_queue_pkg(body)
+# Loading uvvm_util.rand_pkg(body)
+# Loading uvvm_util.func_cov_pkg(body)
+# Loading uvvm_util.sbi_bfm_pkg(body)
+# Loading uvvm_util.i2c_bfm_pkg(body)
+# Loading work.i2c_master_all_tb_uvvm(behav)#1
+# Loading work.i2c_master_all(rtl)#1
+run 1000 us
+# UVVM:      
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      ***  REPORT OF GLOBAL CTRL ***
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:                                IGNORE    STOP_LIMIT
+# UVVM:                NOTE         :  REGARD         0
+# UVVM:                TB_NOTE      :  REGARD         0
+# UVVM:                WARNING      :  REGARD         0
+# UVVM:                TB_WARNING   :  REGARD         0
+# UVVM:                MANUAL_CHECK :  REGARD         0
+# UVVM:                ERROR        :  REGARD         0
+# UVVM:                TB_ERROR     :  REGARD         1
+# UVVM:                FAILURE      :  REGARD         1
+# UVVM:                TB_FAILURE   :  REGARD         1
+# UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM:      
+# UVVM: ID_LOG_MSG_CTRL                    0.0 ns  TB seq.                        enable_log_msg(ALL_MESSAGES). 
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                         0.0 ns  TB seq.                        Start Simulation of TB for I2C_MASTER_ALL
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_CLOCK_GEN                       0.0 ns  TB seq.                        Starting clock IRQC TB clock
+# UVVM: ID_GEN_PULSE                     220.0 ns  TB seq.                        Pulsed to 1 for 20 ns. 'Reset'
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                       420.0 ns  TB seq.                        Sjekk registere etter reset
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# UVVM: ID_BFM                           445.0 ns  TB seq.                        sbi_check(A:x"0", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD'
+# UVVM: ID_BFM                           665.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA'
+# UVVM: ID_BFM                           885.0 ns  TB seq.                        sbi_check(A:x"2", x"000001A7")=> OK, read data = x"1A7". 'sjekk CTRL'
+# UVVM: ID_BFM                          1105.0 ns  TB seq.                        sbi_check(A:x"3", x"00000100")=> OK, read data = x"100". 'sjekk STATUS'
+# UVVM: ID_BFM                          1325.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD_FIFO'
+# UVVM: ID_BFM                          1545.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                          1765.0 ns  TB seq.                        sbi_check(A:x"6", x"00000000")=> OK, read data = x"00000000". 'sjekk OP_CNT'
+# UVVM: ID_BFM                          1985.0 ns  TB seq.                        sbi_write(A:x"0", x"00000000") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2205.0 ns  TB seq.                        sbi_write(A:x"0", x"00000111") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2425.0 ns  TB seq.                        sbi_write(A:x"0", x"00000001") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2645.0 ns  TB seq.                        sbi_write(A:x"0", x"00000002") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          2865.0 ns  TB seq.                        sbi_write(A:x"0", x"00000103") completed. 'Skriver til TFR_CMD'
+# UVVM: ID_BFM                          3085.0 ns  TB seq.                        sbi_write(A:x"2", x"00000200") completed. 'Skriver til CTRL'
+# UVVM: ID_BFM                          3905.0 ns  TB seq.                        sbi_check(A:x"0", x"00000103")=> OK, read data = x"103". 'sjekk TFR_CMD for nyeste verdi'
+# UVVM: ID_BFM                          4125.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA for nyeste verdi'
+# UVVM: ID_BFM                          4345.0 ns  TB seq.                        sbi_check(A:x"2", x"000002A7")=> OK, read data = x"2A7". 'sjekk CTRL etter at fast mode er
+# UVVM:                                                                           startet'
+# UVVM: ID_BFM                          4565.0 ns  TB seq.                        sbi_check(A:x"3", x"00000000")=> OK, read data = x"00000000". 'sjekk STATUS'
+# UVVM: ID_BFM                          4785.0 ns  TB seq.                        sbi_check(A:x"4", x"00011104")=> OK, read data = x"11104". 'sjekk TFR_CMD_FIFO nå som første
+# UVVM:                                                                           TFR_CMD er sendt'
+# UVVM: ID_BFM                          5005.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+# UVVM: ID_BFM                        605025.0 ns  TB seq.                        sbi_check(A:x"6", x"00000005")=> OK, read data = x"5". 'sjekk OP_CNT'
+run 1000 us
+# UVVM: ID_BFM                       1205045.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk RESERVED'
+# UVVM:      
+# UVVM:      ====================================================================================================================================================================
+# UVVM:      *** FINAL SUMMARY OF ALL ALERTS ***
+# UVVM:      ====================================================================================================================================================================
+# UVVM:                                REGARDED   EXPECTED  IGNORED      Comment?
+# UVVM:                NOTE         :      0         0         0         ok
+# UVVM:                TB_NOTE      :      0         0         0         ok
+# UVVM:                WARNING      :      0         0         0         ok
+# UVVM:                TB_WARNING   :      0         0         0         ok
+# UVVM:                MANUAL_CHECK :      0         0         0         ok
+# UVVM:                ERROR        :      0         0         0         ok
+# UVVM:                TB_ERROR     :      0         0         0         ok
+# UVVM:                FAILURE      :      0         0         0         ok
+# UVVM:                TB_FAILURE   :      0         0         0         ok
+# UVVM:      ====================================================================================================================================================================
+# UVVM:      >> Simulation SUCCESS: No mismatch between counted and expected serious alerts
+# UVVM:      ====================================================================================================================================================================
+# UVVM:      
+# UVVM:      
+# UVVM: 
+# UVVM: 
+# UVVM: ID_LOG_HDR                   1205045.0 ns  TB seq.                        SIMULATION COMPLETED
+# UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# End time: 01:07:52 on May 28,2025, Elapsed time: 6:03:25
+# Errors: 0, Warnings: 1

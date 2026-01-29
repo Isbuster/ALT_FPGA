@@ -1,0 +1,16 @@
+
+State Machine - |usb_tester|antiprell:start_pulse_antiprell|tilstand
+Name tilstand.til_null tilstand.ligger_hoegt tilstand.funnet_1 tilstand.vent tilstand.start 
+tilstand.start 0 0 0 0 0 
+tilstand.vent 0 0 0 1 1 
+tilstand.funnet_1 0 0 1 0 1 
+tilstand.ligger_hoegt 0 1 0 0 1 
+tilstand.til_null 1 0 0 0 1 
+
+State Machine - |usb_tester|antiprell:wr_start_pulse_antiprell|tilstand
+Name tilstand.til_null tilstand.ligger_hoegt tilstand.funnet_1 tilstand.vent tilstand.start 
+tilstand.start 0 0 0 0 0 
+tilstand.vent 0 0 0 1 1 
+tilstand.funnet_1 0 0 1 0 1 
+tilstand.ligger_hoegt 0 1 0 0 1 
+tilstand.til_null 1 0 0 0 1 

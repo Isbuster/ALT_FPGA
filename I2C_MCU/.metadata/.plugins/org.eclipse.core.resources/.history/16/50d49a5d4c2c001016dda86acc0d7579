@@ -1,0 +1,94 @@
+/*
+ * "RTC" software.
+ *
+ * This software communicates with DS3231 RTC-Module using I2C
+ *
+ */
+
+ #include <stdio.h>
+ #include <system.h>
+ #include <io.h>
+ #include <ctype.h>
+ 
+ // RTC I2C-adresse
+ #define RTC_ADR 0x68
+ #define byte unsigned char
+ 
+ // I2CMaster controllsignal
+ #define STOP 1 << 8
+ #define READ 0x1
+ 
+ // RTC register
+ #define SECONDS 0x0
+ #define MINUTES 0x1
+ #define HOURS 0x2
+ #define WEEKDAY 0x3
+ #define DATE 0x4
+ #define MONTH 0x5
+ #define YEAR 0x6
+ #define TEMP_HIGH 0x11
+ #define TEMP_LOW 0x12
+ 
+ /// I2C MASTER register
+ #define TFR_CMD 0 * 4
+ #define RX_DATA 1 * 4
+ #define CTRL 2 * 4
+ #define STATUS 3 * 4
+ #define TFR_CMD_FIFO_LVL 4 * 4
+ #define RX_DATA_FIFO_LVL 5 * 4
+ #define OP_CNT 6 * 4
+ 
+ void delay(int value)
+ {
+     for (int i = 0; i < value; i++);
+ }
+ 
+ unsigned char get_rtc_reg(unsigned char reg_adr);
+ void get_rtc_multi_reg(unsigned char reg_adr, unsigned char num_regs, unsigned char *data);
+ void set_rtc_reg(unsigned char reg_adr, unsigned char value);
+ unsigned char bcd2bin_two_digits(unsigned char bcd_in);
+ unsigned char bin2bdc_two_digits(unsigned char bin_in);
+ 
+ float get_rtc_temp(void);
+ void get_rtc_time(byte *second, byte *minute, byte *hour, byte *week_day, byte *day, byte *month, unsigned short int *year);
+ void set_rtc_time(byte second, byte minute, byte hour, byte week_day, byte day, byte month, byte year);
+ 
+ 
+ int main()
+ {
+  byte enere, tiere, svar;
+  IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, RTC_ADR); // Enable I2C Master
+  delay(1000000); // Wait for 1ms
+  IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, MINUTES); // Enable I2C Master
+  delay(1000000); // Wait for 1ms
+  IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, 0x5|STOP); // Enable I2C Master
+  delay(1000000); // Wait for 1ms
+  IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, RTC_ADR|READ); // Enable I2C Master
+  delay(1000000); // Wait for 1ms
+  IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, STOP); // Enable I2C Master
+  delay(1000000); // Wait for 1ms
+  svar = IORD_32DIRECT(I2C_MASTER_BASE, RX_DATA); // Enable I2C Master
+  delay(1000000); // Wait for 1ms
+  enere = svar & 0x0f;
+  tiere = (svar >> 4) & 0x0f;
+  printf("RTC: %d:%d\n", tiere, enere);
+
+  while (0 < 1){
+    IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, RTC_ADR);
+  }
+
+  //IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, 0x0F);
+  //IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, 0x0F);
+  //IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, 0x0F);
+  //IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, 0x0F);
+  //IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, 0x0F);
+  //IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, 0x0F);
+  //IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, 0x0F);
+  //IOWR_32DIRECT(I2C_MASTER_BASE, TFR_CMD, 0x0F);
+  //svar = IORD_32DIRECT(I2C_MASTER_BASE, TFR_CMD);
+//
+//
+  //printf("RTC: %d\n", svar);
+
+ }
+ 

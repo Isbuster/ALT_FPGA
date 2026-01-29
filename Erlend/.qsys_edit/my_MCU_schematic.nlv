@@ -1,0 +1,23 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst my_MCU.nios.reset_bridge -pg 1
+preplace inst my_MCU.jtag -pg 1 -lvl 3 -y 110
+preplace inst my_MCU.nios.clock_bridge -pg 1
+preplace inst my_MCU.nios.cpu -pg 1
+preplace inst my_MCU.ram -pg 1 -lvl 3 -y 30
+preplace inst my_MCU.pio_out -pg 1 -lvl 3 -y 410
+preplace inst my_MCU.clk_0 -pg 1 -lvl 1 -y 110
+preplace inst my_MCU.nios -pg 1 -lvl 2 -y 100
+preplace inst my_MCU -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst my_MCU.i2c_master_0 -pg 1 -lvl 3 -y 310
+preplace inst my_MCU.pio_in -pg 1 -lvl 3 -y 210
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)my_MCU.pio_in_ext,(SLAVE)pio_in.external_connection) 1 0 3 NJ 240 NJ 240 NJ
+preplace netloc INTERCONNECT<net_container>my_MCU</net_container>(SLAVE)i2c_master_0.reset_sink,(SLAVE)pio_in.reset,(MASTER)clk_0.clk_reset,(SLAVE)pio_out.reset,(SLAVE)ram.reset1,(MASTER)nios.debug_reset_request,(SLAVE)nios.reset,(SLAVE)jtag.reset) 1 1 2 290 460 710
+preplace netloc INTERCONNECT<net_container>my_MCU</net_container>(SLAVE)jtag.avalon_jtag_slave,(SLAVE)pio_out.s1,(SLAVE)i2c_master_0.avalon_slave_0,(SLAVE)ram.s1,(SLAVE)pio_in.s1,(MASTER)nios.data_master,(MASTER)nios.instruction_master,(SLAVE)nios.debug_mem_slave) 1 1 2 330 480 690
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)my_MCU.reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>my_MCU</net_container>(SLAVE)jtag.clk,(SLAVE)i2c_master_0.clock,(SLAVE)nios.clk,(MASTER)clk_0.clk,(SLAVE)pio_in.clk,(SLAVE)pio_out.clk,(SLAVE)ram.clk1) 1 1 2 310 260 730
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)pio_out.external_connection,(SLAVE)my_MCU.pio_out_ext) 1 0 3 NJ 440 NJ 440 NJ
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)my_MCU.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>my_MCU</net_container>(SLAVE)jtag.irq,(MASTER)nios.irq) 1 2 1 750
+levelinfo -pg 1 0 80 940
+levelinfo -hier my_MCU 90 120 450 780 930

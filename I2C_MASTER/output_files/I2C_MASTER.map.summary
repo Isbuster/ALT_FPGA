@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed May  7 09:57:36 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : I2C_MASTER
+Top-level Entity Name : I2C_MASTER
+Family : Cyclone IV E
+Total logic elements : 111
+    Total combinational functions : 92
+    Dedicated logic registers : 60
+Total registers : 60
+Total pins : 34
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

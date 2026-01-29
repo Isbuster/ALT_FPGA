@@ -1,0 +1,6 @@
+10:54:14 **** Clean-only build of configuration Nios II for project KJIPPER_TAK_2_bsp ****
+wsl make clean 
+[BSP clean complete]
+
+10:54:14 Build Finished (took 203ms)
+

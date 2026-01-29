@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Jan 19 10:52:35 2026
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : bRAM_testbenk
+Top-level Entity Name : bRAM_testkort
+Family : Cyclone IV E
+Total logic elements : 968
+    Total combinational functions : 558
+    Dedicated logic registers : 531
+Total registers : 531
+Total pins : 38
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

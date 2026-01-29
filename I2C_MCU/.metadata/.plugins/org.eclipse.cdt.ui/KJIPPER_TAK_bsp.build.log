@@ -1,0 +1,6 @@
+22:38:52 **** Incremental Build of configuration Nios II for project KJIPPER_TAK_bsp ****
+wsl make all 
+[BSP build complete]
+
+22:38:53 Build Finished (took 793ms)
+

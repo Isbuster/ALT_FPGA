@@ -1,0 +1,398 @@
+Analysis & Synthesis report for I2c_MCU_REV_1
+Tue May 27 18:31:05 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis IP Cores Summary
+  6. Analysis & Synthesis Messages
+  7. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Tue May 27 18:31:05 2025              ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; I2c_MCU_REV_1                                  ;
+; Top-level Entity Name              ; Oblig3_TOP                                     ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; Oblig3_TOP         ; I2c_MCU_REV_1      ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
+; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                     ;
++--------+--------------+---------+--------------+--------------+-------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance         ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-------------------------+-----------------+
+; N/A    ; Qsys         ; 23.1    ; N/A          ; N/A          ; |Oblig3_TOP|my_MCU:inst ; my_MCU.qsys     ;
++--------+--------------+---------+--------------+--------------+-------------------------+-----------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Tue May 27 18:30:58 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off I2C_MCU -c I2c_MCU_REV_1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file i2c_master_reg.vhd
+    Info (12022): Found design unit 1: I2C_MASTER_REG-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/I2C_MASTER_REG.vhd Line: 33
+    Info (12023): Found entity 1: I2C_MASTER_REG File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/I2C_MASTER_REG.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file i2c_master_all.vhd
+    Info (12022): Found design unit 1: I2C_MASTER_ALL-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/I2C_MASTER_ALL.vhd Line: 24
+    Info (12023): Found entity 1: I2C_MASTER_ALL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/I2C_MASTER_ALL.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file i2c_master.vhd
+    Info (12022): Found design unit 1: I2C_MASTER-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/I2C_MASTER.vhd Line: 31
+    Info (12023): Found entity 1: I2C_MASTER File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/I2C_MASTER.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file dff_synk.vhd
+    Info (12022): Found design unit 1: dff_synk-comp File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/dff_synk.vhd Line: 12
+    Info (12023): Found entity 1: dff_synk File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/dff_synk.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file heart.vhd
+    Info (12022): Found design unit 1: HEART-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/heart.vhd Line: 13
+    Info (12023): Found entity 1: HEART File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/heart.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file my_mcu/synthesis/my_mcu.vhd
+    Info (12022): Found design unit 1: my_MCU-rtl File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/my_MCU.vhd Line: 20
+    Info (12023): Found entity 1: my_MCU File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/my_MCU.vhd Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_reset_controller.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_reset_synchronizer.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_irq_mapper.sv
+    Info (12023): Found entity 1: my_MCU_irq_mapper File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_irq_mapper.sv Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0.v
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0 File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_avalon_st_adapter.v
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_avalon_st_adapter File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_avalon_st_adapter.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_avalon_st_adapter_error_adapter_0 File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv Line: 66
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_rsp_mux_001.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_rsp_mux_001 File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_rsp_mux_001.sv Line: 51
+Info (12021): Found 2 design units, including 2 entities, in source file my_mcu/synthesis/submodules/altera_merlin_arbitrator.sv
+    Info (12023): Found entity 1: altera_merlin_arbitrator File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_merlin_arbitrator.sv Line: 103
+    Info (12023): Found entity 2: altera_merlin_arb_adder File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_merlin_arbitrator.sv Line: 228
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_rsp_mux.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_rsp_mux File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_rsp_mux.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_rsp_demux.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_rsp_demux File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_rsp_demux.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_cmd_mux_002.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_cmd_mux_002 File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_cmd_mux_002.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_cmd_mux.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_cmd_mux File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_cmd_mux.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_cmd_demux_001.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_cmd_demux_001 File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_cmd_demux_001.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_cmd_demux.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_cmd_demux File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_cmd_demux.sv Line: 43
+Info (12021): Found 2 design units, including 2 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_router_004.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_router_004_default_decode File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_router_004.sv Line: 45
+    Info (12023): Found entity 2: my_MCU_mm_interconnect_0_router_004 File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_router_004.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_router_002.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_router_002_default_decode File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_router_002.sv Line: 45
+    Info (12023): Found entity 2: my_MCU_mm_interconnect_0_router_002 File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_router_002.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_router_001.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_router_001_default_decode File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_router_001.sv Line: 45
+    Info (12023): Found entity 2: my_MCU_mm_interconnect_0_router_001 File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_router_001.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file my_mcu/synthesis/submodules/my_mcu_mm_interconnect_0_router.sv
+    Info (12023): Found entity 1: my_MCU_mm_interconnect_0_router_default_decode File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_router.sv Line: 45
+    Info (12023): Found entity 2: my_MCU_mm_interconnect_0_router File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_mm_interconnect_0_router.sv Line: 84
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/altera_avalon_sc_fifo.v
+    Info (12023): Found entity 1: altera_avalon_sc_fifo File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_avalon_sc_fifo.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/altera_merlin_slave_agent.sv
+    Info (12023): Found entity 1: altera_merlin_slave_agent File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_merlin_slave_agent.sv Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+    Info (12023): Found entity 1: altera_merlin_burst_uncompressor File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_merlin_burst_uncompressor.sv Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/altera_merlin_master_agent.sv
+    Info (12023): Found entity 1: altera_merlin_master_agent File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_merlin_master_agent.sv Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/altera_merlin_slave_translator.sv
+    Info (12023): Found entity 1: altera_merlin_slave_translator File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_merlin_slave_translator.sv Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/altera_merlin_master_translator.sv
+    Info (12023): Found entity 1: altera_merlin_master_translator File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/altera_merlin_master_translator.sv Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_ram.v
+    Info (12023): Found entity 1: my_MCU_ram File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_ram.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_pio_out.v
+    Info (12023): Found entity 1: my_MCU_pio_out File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_pio_out.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_pio_in.v
+    Info (12023): Found entity 1: my_MCU_pio_in File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_pio_in.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_nios.v
+    Info (12023): Found entity 1: my_MCU_nios File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios.v Line: 9
+Info (12021): Found 21 design units, including 21 entities, in source file my_mcu/synthesis/submodules/my_mcu_nios_cpu.v
+    Info (12023): Found entity 1: my_MCU_nios_cpu_register_bank_a_module File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 21
+    Info (12023): Found entity 2: my_MCU_nios_cpu_register_bank_b_module File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 87
+    Info (12023): Found entity 3: my_MCU_nios_cpu_nios2_oci_debug File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 153
+    Info (12023): Found entity 4: my_MCU_nios_cpu_nios2_oci_break File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 308
+    Info (12023): Found entity 5: my_MCU_nios_cpu_nios2_oci_xbrk File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 601
+    Info (12023): Found entity 6: my_MCU_nios_cpu_nios2_oci_dbrk File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 808
+    Info (12023): Found entity 7: my_MCU_nios_cpu_nios2_oci_itrace File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 995
+    Info (12023): Found entity 8: my_MCU_nios_cpu_nios2_oci_td_mode File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 1136
+    Info (12023): Found entity 9: my_MCU_nios_cpu_nios2_oci_dtrace File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 1204
+    Info (12023): Found entity 10: my_MCU_nios_cpu_nios2_oci_compute_input_tm_cnt File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 1286
+    Info (12023): Found entity 11: my_MCU_nios_cpu_nios2_oci_fifo_wrptr_inc File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 1358
+    Info (12023): Found entity 12: my_MCU_nios_cpu_nios2_oci_fifo_cnt_inc File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 1401
+    Info (12023): Found entity 13: my_MCU_nios_cpu_nios2_oci_fifo File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 1448
+    Info (12023): Found entity 14: my_MCU_nios_cpu_nios2_oci_pib File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 1934
+    Info (12023): Found entity 15: my_MCU_nios_cpu_nios2_oci_im File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 1957
+    Info (12023): Found entity 16: my_MCU_nios_cpu_nios2_performance_monitors File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 2027
+    Info (12023): Found entity 17: my_MCU_nios_cpu_nios2_avalon_reg File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 2044
+    Info (12023): Found entity 18: my_MCU_nios_cpu_ociram_sp_ram_module File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 2137
+    Info (12023): Found entity 19: my_MCU_nios_cpu_nios2_ocimem File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 2202
+    Info (12023): Found entity 20: my_MCU_nios_cpu_nios2_oci File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 2383
+    Info (12023): Found entity 21: my_MCU_nios_cpu File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu.v Line: 2855
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_nios_cpu_debug_slave_sysclk.v
+    Info (12023): Found entity 1: my_MCU_nios_cpu_debug_slave_sysclk File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu_debug_slave_sysclk.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_nios_cpu_debug_slave_tck.v
+    Info (12023): Found entity 1: my_MCU_nios_cpu_debug_slave_tck File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu_debug_slave_tck.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_nios_cpu_debug_slave_wrapper.v
+    Info (12023): Found entity 1: my_MCU_nios_cpu_debug_slave_wrapper File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu_debug_slave_wrapper.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file my_mcu/synthesis/submodules/my_mcu_nios_cpu_test_bench.v
+    Info (12023): Found entity 1: my_MCU_nios_cpu_test_bench File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_nios_cpu_test_bench.v Line: 21
+Info (12021): Found 5 design units, including 5 entities, in source file my_mcu/synthesis/submodules/my_mcu_jtag.v
+    Info (12023): Found entity 1: my_MCU_jtag_sim_scfifo_w File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_jtag.v Line: 21
+    Info (12023): Found entity 2: my_MCU_jtag_scfifo_w File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_jtag.v Line: 78
+    Info (12023): Found entity 3: my_MCU_jtag_sim_scfifo_r File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_jtag.v Line: 164
+    Info (12023): Found entity 4: my_MCU_jtag_scfifo_r File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_jtag.v Line: 243
+    Info (12023): Found entity 5: my_MCU_jtag File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/my_MCU_jtag.v Line: 331
+Info (12021): Found 2 design units, including 1 entities, in source file my_mcu/synthesis/submodules/i2c_master.vhd
+    Info (12022): Found design unit 1: I2C_MASTER-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER.vhd Line: 31
+    Info (12023): Found entity 1: I2C_MASTER File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file my_mcu/synthesis/submodules/i2c_master_all.vhd
+    Info (12022): Found design unit 1: I2C_MASTER_ALL-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_ALL.vhd Line: 24
+    Info (12023): Found entity 1: I2C_MASTER_ALL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_ALL.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file my_mcu/synthesis/submodules/i2c_master_reg.vhd
+    Info (12022): Found design unit 1: I2C_MASTER_REG-RTL File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 33
+    Info (12023): Found entity 1: I2C_MASTER_REG File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file my_mcu/synthesis/submodules/dff_synk.vhd
+    Info (12022): Found design unit 1: dff_synk-comp File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/dff_synk.vhd Line: 12
+    Info (12023): Found entity 1: dff_synk File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/dff_synk.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file oblig3_top.bdf
+    Info (12023): Found entity 1: Oblig3_TOP
+Info (12127): Elaborating entity "Oblig3_TOP" for the top level hierarchy
+Info (12128): Elaborating entity "my_MCU" for hierarchy "my_MCU:inst"
+Info (12128): Elaborating entity "I2C_MASTER_ALL" for hierarchy "my_MCU:inst|I2C_MASTER_ALL:i2c_master_5" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/my_MCU.vhd Line: 310
+Info (12128): Elaborating entity "I2C_MASTER" for hierarchy "my_MCU:inst|I2C_MASTER_ALL:i2c_master_5|I2C_MASTER:c_i2c_master" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_ALL.vhd Line: 92
+Warning (10036): Verilog HDL or VHDL warning at I2C_MASTER.vhd(33): object "SDA_IN" assigned a value but never read File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER.vhd Line: 33
+Info (12128): Elaborating entity "dff_synk" for hierarchy "my_MCU:inst|I2C_MASTER_ALL:i2c_master_5|I2C_MASTER:c_i2c_master|dff_synk:c_dff_synk" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER.vhd Line: 323
+Info (12128): Elaborating entity "I2C_MASTER_REG" for hierarchy "my_MCU:inst|I2C_MASTER_ALL:i2c_master_5|I2C_MASTER_REG:c_i2c_master_reg" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_ALL.vhd Line: 115
+Warning (10540): VHDL Signal Declaration warning at I2C_MASTER_REG.vhd(62): used explicit default value for signal "baud_standard_mode" because signal was never assigned a value File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 62
+Warning (10540): VHDL Signal Declaration warning at I2C_MASTER_REG.vhd(63): used explicit default value for signal "baud_fast_mode" because signal was never assigned a value File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 63
+Warning (10036): Verilog HDL or VHDL warning at I2C_MASTER_REG.vhd(82): object "MODE" assigned a value but never read File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(303): signal "wr_n_internal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 303
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(303): signal "done_rising" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 303
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(310): signal "fifo_tfr_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 310
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(316): signal "fifo_rx_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 316
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(317): signal "chipselect_rising" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 317
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(318): signal "fifo_rx_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 318
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(320): signal "fifo_rx_data_amnt_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 320
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(321): signal "fifo_rx_data_amnt_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 321
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(326): signal "fast_mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 326
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(326): signal "standard_mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 326
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(329): signal "no_ack_internal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 329
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(329): signal "done_internal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 329
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(329): signal "idle_internal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 329
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(329): signal "errors_index" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 329
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(329): signal "errors_tot" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 329
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(332): signal "fifo_tfr_cmd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 332
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(332): signal "fifo_tfr_cmd_index_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 332
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(332): signal "fifo_tfr_cmd_index" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 332
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(332): signal "fifo_tfr_cmd_amnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 332
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(337): signal "fifo_rx_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 337
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(337): signal "fifo_rx_data_index_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 337
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(337): signal "fifo_rx_data_index" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 337
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(337): signal "fifo_rx_data_amnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 337
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(339): signal "writedata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 339
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(344): signal "writedata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 344
+Warning (10492): VHDL Process Statement warning at I2C_MASTER_REG.vhd(350): signal "op_cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 350
+Error (10818): Can't infer register for "fifo_rx_data_index[0]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data_index[0]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data_index[1]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data_index[1]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data_index[2]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data_index[2]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data_index[3]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data_index[3]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data_amnt_int[0]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data_amnt_int[0]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data_amnt_int[1]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data_amnt_int[1]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data_amnt_int[2]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data_amnt_int[2]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data_amnt_int[3]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data_amnt_int[3]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][0]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][0]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][1]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][1]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][2]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][2]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][3]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][3]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][4]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][4]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][5]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][5]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][6]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][6]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][7]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][7]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][8]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][8]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][9]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][9]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (10818): Can't infer register for "fifo_rx_data[0][10]" at I2C_MASTER_REG.vhd(297) because it does not hold its value outside the clock edge File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 297
+Info (10041): Inferred latch for "fifo_rx_data[0][10]" at I2C_MASTER_REG.vhd(295) File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_REG.vhd Line: 295
+Error (12152): Can't elaborate user hierarchy "my_MCU:inst|I2C_MASTER_ALL:i2c_master_5|I2C_MASTER_REG:c_i2c_master_reg" File: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/my_MCU/synthesis/submodules/I2C_MASTER_ALL.vhd Line: 115
+Info (144001): Generated suppressed messages file C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/output_files/I2c_MCU_REV_1.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 31 warnings
+    Error: Peak virtual memory: 4843 megabytes
+    Error: Processing ended: Tue May 27 18:31:06 2025
+    Error: Elapsed time: 00:00:08
+    Error: Total CPU time (on all processors): 00:00:17
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/output_files/I2c_MCU_REV_1.map.smsg.
+
+

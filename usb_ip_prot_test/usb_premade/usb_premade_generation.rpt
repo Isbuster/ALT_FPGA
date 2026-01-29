@@ -1,0 +1,29 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/kaladin/Dokumenter/Koding/fpga/usb_ip_prot_test/usb_premade.qsys --block-symbol-file --output-directory=/home/kaladin/Dokumenter/Koding/fpga/usb_ip_prot_test/usb_premade --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading usb_ip_prot_test/usb_premade.qsys
+Progress: Reading input file
+Progress: Adding usb_0 [altera_up_avalon_usb 18.0]
+Progress: Parameterizing module usb_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/kaladin/Dokumenter/Koding/fpga/usb_ip_prot_test/usb_premade.qsys --synthesis=VHDL --output-directory=/home/kaladin/Dokumenter/Koding/fpga/usb_ip_prot_test/usb_premade/synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading usb_ip_prot_test/usb_premade.qsys
+Progress: Reading input file
+Progress: Adding usb_0 [altera_up_avalon_usb 18.0]
+Progress: Parameterizing module usb_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: usb_premade: Generating "usb_premade" for QUARTUS_SYNTH
+Info: usb_0: Starting Generation of USB Controller
+Info: usb_0: "usb_premade" instantiated altera_up_avalon_usb "usb_0"
+Info: usb_premade: Done "usb_premade" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

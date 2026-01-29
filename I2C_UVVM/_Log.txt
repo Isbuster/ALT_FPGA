@@ -1,0 +1,73 @@
+UVVM:      
+UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UVVM:      ***  REPORT OF GLOBAL CTRL ***
+UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UVVM:                                IGNORE    STOP_LIMIT
+UVVM:                NOTE         :  REGARD         0
+UVVM:                TB_NOTE      :  REGARD         0
+UVVM:                WARNING      :  REGARD         0
+UVVM:                TB_WARNING   :  REGARD         0
+UVVM:                MANUAL_CHECK :  REGARD         0
+UVVM:                ERROR        :  REGARD         0
+UVVM:                TB_ERROR     :  REGARD         1
+UVVM:                FAILURE      :  REGARD         1
+UVVM:                TB_FAILURE   :  REGARD         1
+UVVM:      --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UVVM:      
+UVVM: ID_LOG_MSG_CTRL                    0.0 ns  TB seq.                        enable_log_msg(ALL_MESSAGES). 
+UVVM: 
+UVVM: 
+UVVM: ID_LOG_HDR                         0.0 ns  TB seq.                        Start Simulation of TB for I2C_MASTER_ALL
+UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UVVM: ID_CLOCK_GEN                       0.0 ns  TB seq.                        Starting clock IRQC TB clock
+UVVM: ID_GEN_PULSE                     220.0 ns  TB seq.                        Pulsed to 1 for 20 ns. 'Reset'
+UVVM: 
+UVVM: 
+UVVM: ID_LOG_HDR                       420.0 ns  TB seq.                        Sjekk registere etter reset
+UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UVVM: ID_BFM                           445.0 ns  TB seq.                        sbi_check(A:x"0", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD'
+UVVM: ID_BFM                           665.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA'
+UVVM: ID_BFM                           885.0 ns  TB seq.                        sbi_check(A:x"2", x"000001A7")=> OK, read data = x"1A7". 'sjekk CTRL'
+UVVM: ID_BFM                          1105.0 ns  TB seq.                        sbi_check(A:x"3", x"00000100")=> OK, read data = x"100". 'sjekk STATUS'
+UVVM: ID_BFM                          1325.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk TFR_CMD_FIFO'
+UVVM: ID_BFM                          1545.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+UVVM: ID_BFM                          1765.0 ns  TB seq.                        sbi_check(A:x"6", x"00000000")=> OK, read data = x"00000000". 'sjekk OP_CNT'
+UVVM: ID_BFM                          1985.0 ns  TB seq.                        sbi_write(A:x"0", x"00000000") completed. 'Skriver til TFR_CMD'
+UVVM: ID_BFM                          2205.0 ns  TB seq.                        sbi_write(A:x"0", x"00000111") completed. 'Skriver til TFR_CMD'
+UVVM: ID_BFM                          2425.0 ns  TB seq.                        sbi_write(A:x"0", x"00000001") completed. 'Skriver til TFR_CMD'
+UVVM: ID_BFM                          2645.0 ns  TB seq.                        sbi_write(A:x"0", x"00000002") completed. 'Skriver til TFR_CMD'
+UVVM: ID_BFM                          2865.0 ns  TB seq.                        sbi_write(A:x"0", x"00000103") completed. 'Skriver til TFR_CMD'
+UVVM: ID_BFM                          3085.0 ns  TB seq.                        sbi_write(A:x"2", x"00000200") completed. 'Skriver til CTRL'
+UVVM: ID_BFM                          3905.0 ns  TB seq.                        sbi_check(A:x"0", x"00000103")=> OK, read data = x"103". 'sjekk TFR_CMD for nyeste verdi'
+UVVM: ID_BFM                          4125.0 ns  TB seq.                        sbi_check(A:x"1", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA for nyeste verdi'
+UVVM: ID_BFM                          4345.0 ns  TB seq.                        sbi_check(A:x"2", x"000002A7")=> OK, read data = x"2A7". 'sjekk CTRL etter at fast mode er
+UVVM:                                                                           startet'
+UVVM: ID_BFM                          4565.0 ns  TB seq.                        sbi_check(A:x"3", x"00000000")=> OK, read data = x"00000000". 'sjekk STATUS'
+UVVM: ID_BFM                          4785.0 ns  TB seq.                        sbi_check(A:x"4", x"00011104")=> OK, read data = x"11104". 'sjekk TFR_CMD_FIFO nå som første
+UVVM:                                                                           TFR_CMD er sendt'
+UVVM: ID_BFM                          5005.0 ns  TB seq.                        sbi_check(A:x"5", x"00000000")=> OK, read data = x"00000000". 'sjekk RX_DATA_FIFO'
+UVVM: ID_BFM                        605025.0 ns  TB seq.                        sbi_check(A:x"6", x"00000005")=> OK, read data = x"5". 'sjekk OP_CNT'
+UVVM: ID_BFM                       1205045.0 ns  TB seq.                        sbi_check(A:x"4", x"00000000")=> OK, read data = x"00000000". 'sjekk RESERVED'
+UVVM:      
+UVVM:      ====================================================================================================================================================================
+UVVM:      *** FINAL SUMMARY OF ALL ALERTS ***
+UVVM:      ====================================================================================================================================================================
+UVVM:                                REGARDED   EXPECTED  IGNORED      Comment?
+UVVM:                NOTE         :      0         0         0         ok
+UVVM:                TB_NOTE      :      0         0         0         ok
+UVVM:                WARNING      :      0         0         0         ok
+UVVM:                TB_WARNING   :      0         0         0         ok
+UVVM:                MANUAL_CHECK :      0         0         0         ok
+UVVM:                ERROR        :      0         0         0         ok
+UVVM:                TB_ERROR     :      0         0         0         ok
+UVVM:                FAILURE      :      0         0         0         ok
+UVVM:                TB_FAILURE   :      0         0         0         ok
+UVVM:      ====================================================================================================================================================================
+UVVM:      >> Simulation SUCCESS: No mismatch between counted and expected serious alerts
+UVVM:      ====================================================================================================================================================================
+UVVM:      
+UVVM:      
+UVVM: 
+UVVM: 
+UVVM: ID_LOG_HDR                   1205045.0 ns  TB seq.                        SIMULATION COMPLETED
+UVVM: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------

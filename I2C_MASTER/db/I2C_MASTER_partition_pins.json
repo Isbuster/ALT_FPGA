@@ -1,0 +1,137 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SCL",
+					"strict" : false
+				},
+				{
+					"name" : "DONE",
+					"strict" : false
+				},
+				{
+					"name" : "NO_ACK",
+					"strict" : false
+				},
+				{
+					"name" : "RD_BYTE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RD_BYTE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RD_BYTE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "RD_BYTE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RD_BYTE[4]",
+					"strict" : false
+				},
+				{
+					"name" : "RD_BYTE[5]",
+					"strict" : false
+				},
+				{
+					"name" : "RD_BYTE[6]",
+					"strict" : false
+				},
+				{
+					"name" : "RD_BYTE[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SDA",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "EN",
+					"strict" : false
+				},
+				{
+					"name" : "BAUD_RATE[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BAUD_RATE[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BAUD_RATE[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BAUD_RATE[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BAUD_RATE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BAUD_RATE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BAUD_RATE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BAUD_RATE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "WR_N",
+					"strict" : false
+				},
+				{
+					"name" : "WR_BYTE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "WR_BYTE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "WR_BYTE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "WR_BYTE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "WR_BYTE[6]",
+					"strict" : false
+				},
+				{
+					"name" : "WR_BYTE[5]",
+					"strict" : false
+				},
+				{
+					"name" : "WR_BYTE[4]",
+					"strict" : false
+				},
+				{
+					"name" : "WR_BYTE[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

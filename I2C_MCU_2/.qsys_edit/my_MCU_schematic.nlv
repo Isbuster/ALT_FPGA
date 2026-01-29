@@ -1,0 +1,24 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst my_MCU.nios.reset_bridge -pg 1
+preplace inst my_MCU.jtag -pg 1 -lvl 3 -y 120
+preplace inst my_MCU.nios.clock_bridge -pg 1
+preplace inst my_MCU.nios.cpu -pg 1
+preplace inst my_MCU.i2c_0 -pg 1 -lvl 3 -y 420
+preplace inst my_MCU.ram -pg 1 -lvl 3 -y 40
+preplace inst my_MCU.pio_out -pg 1 -lvl 3 -y 320
+preplace inst my_MCU.clk_0 -pg 1 -lvl 1 -y 110
+preplace inst my_MCU.nios -pg 1 -lvl 2 -y 110
+preplace inst my_MCU -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst my_MCU.pio_in -pg 1 -lvl 3 -y 220
+preplace netloc FAN_OUT<net_container>my_MCU</net_container>(MASTER)clk_0.clk,(SLAVE)pio_out.clk,(SLAVE)pio_in.clk,(SLAVE)i2c_0.clock,(SLAVE)jtag.clk,(SLAVE)ram.clk1,(SLAVE)nios.clk) 1 1 2 310 30 750
+preplace netloc INTERCONNECT<net_container>my_MCU</net_container>(MASTER)nios.data_master,(SLAVE)pio_out.s1,(SLAVE)jtag.avalon_jtag_slave,(MASTER)nios.instruction_master,(SLAVE)nios.debug_mem_slave,(SLAVE)pio_in.s1,(SLAVE)i2c_0.csr,(SLAVE)ram.s1) 1 1 2 330 70 690
+preplace netloc POINT_TO_POINT<net_container>my_MCU</net_container>(MASTER)nios.irq,(SLAVE)jtag.irq) 1 2 1 730
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)pio_in.external_connection,(SLAVE)my_MCU.pio_in_ext) 1 0 3 NJ 250 NJ 250 NJ
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)clk_0.clk_in,(SLAVE)my_MCU.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)my_MCU.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)pio_out.external_connection,(SLAVE)my_MCU.pio_out_ext) 1 0 3 NJ 350 NJ 350 NJ
+preplace netloc EXPORT<net_container>my_MCU</net_container>(SLAVE)my_MCU.i2c,(SLAVE)i2c_0.i2c_serial) 1 0 3 NJ 490 NJ 490 NJ
+preplace netloc INTERCONNECT<net_container>my_MCU</net_container>(SLAVE)jtag.reset,(MASTER)clk_0.clk_reset,(SLAVE)i2c_0.reset_sink,(SLAVE)nios.reset,(MASTER)nios.debug_reset_request,(SLAVE)pio_in.reset,(SLAVE)ram.reset1,(SLAVE)pio_out.reset) 1 1 2 290 50 710
+levelinfo -pg 1 0 80 940
+levelinfo -hier my_MCU 90 120 450 780 930

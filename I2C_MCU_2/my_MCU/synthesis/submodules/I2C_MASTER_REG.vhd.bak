@@ -1,0 +1,360 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity I2C_MASTER_REG is
+    port(
+      CLK : IN STD_LOGIC;
+      RST : IN STD_LOGIC;
+
+      -- SBI
+      chipselect : in std_logic;
+      wr : in std_logic;
+      rd : in std_logic;
+      address : in std_logic_vector(2 downto 0);
+      writedata : in std_logic_vector(31 downto 0);
+      readdata : out std_logic_vector(31 downto 0);
+
+      -- Fra I2C_MASTER
+      IDLE : IN STD_LOGIC;
+      DONE : IN STD_LOGIC;
+      NO_ACK : IN STD_LOGIC;
+      RD_BYTE: IN STD_LOGIC_VECTOR(7 downto 0);
+
+      -- Fra I2C_MASTER_REG
+      EN : OUT STD_LOGIC := '0';
+      WR_N : OUT STD_LOGIC;
+      STOPP : OUT STD_LOGIC;
+      BAUD_RATE : OUT STD_LOGIC_VECTOR(7 downto 0) := "10100111";
+      WR_BYTE : OUT STD_LOGIC_VECTOR(7 downto 0)
+   );
+end entity I2C_MASTER_REG;
+
+architecture RTL of I2C_MASTER_REG is
+  type FIFO_ARRAY_TFR_CMD is array (15 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
+  type FIFO_ARRAY_RX_DATA is array (15 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
+  signal fifo_tfr_cmd : FIFO_ARRAY_TFR_CMD := (others => (others => '0'));
+  signal fifo_rx_data : FIFO_ARRAY_RX_DATA := (others => (others => '0'));
+  signal chipselect_rising : std_logic := '0';
+
+  SIGNAL fifo_tfr_cmd_amnt : std_logic_vector(3 downto 0);
+  SIGNAL fifo_rx_data_amnt : std_logic_vector(3 downto 0);
+
+  SIGNAL fifo_tfr_cmd_amnt_int : integer range 0 to 15 := 0;
+  SIGNAL fifo_rx_data_amnt_int : integer range 0 to 15 := 0;
+
+  SIGNAL fifo_tfr_cmd_index : std_logic_vector(3 downto 0) := (others => '0');
+  SIGNAL fifo_rx_data_index : std_logic_vector(3 downto 0) := (others => '0');
+  
+  SIGNAL fifo_tfr_cmd_index_int : integer range 0 to 15 := 0;
+  SIGNAL fifo_rx_data_index_int : integer range 0 to 15 := 0;
+
+  SIGNAL op_cnt : std_logic_vector(15 downto 0);
+  SIGNAL op_cnt_int : integer range 0 to 255;
+
+  SIGNAL done_rising : STD_LOGIC := '0';
+
+  SIGNAL stopp_internal : STD_LOGIC;
+  SIGNAL stopp_amnts : integer range 0 to 15;
+  signal stopp_prior_tfr_cmd : std_logic := '0';
+
+  -- baud rate er delt på 3 siden i2c_master er lagt opp med at den teller gjennom baud_rate 3 ganger før neste periode
+  SIGNAL baud_standard_mode : STD_LOGIC_VECTOR(7 downto 0) := "10100111";  
+  SIGNAL baud_fast_mode : STD_LOGIC_VECTOR(7 downto 0) := "00101010";
+  SIGNAL baud_rate_cstm : STD_LOGIC_VECTOR(7 downto 0) := "10100111"; 
+  SIGNAL baud_rate_now : STD_LOGIC_VECTOR(7 downto 0) := "10100111";
+
+  SIGNAL standard_mode : STD_LOGIC := '1';
+  SIGNAL fast_mode : STD_LOGIC := '0';
+
+  -- mSTATUS
+  SIGNAL no_ack_internal : STD_LOGIC := '0';
+  SIGNAL done_internal : STD_LOGIC := '0';
+  SIGNAL idle_internal : STD_LOGIC := '0';
+
+  SIGNAL errors_tot : std_logic_vector(3 downto 0);
+  SIGNAL errors_index : std_logic_vector(3 downto 0);
+  SIGNAL errors_tot_int : integer range 0 to 15;
+  SIGNAL errors_index_int : integer range 0 to 15;
+  SIGNAL errors_cnt : integer range 0 to 15 := 0;
+
+  TYPE MODE_TYPE IS (mTFR_CMD, mRX_DATA, mCTRL, mSTATUS, mTFR_CMD_FIFO, mRX_DATA_FIFO, mOP_CNT);
+  SIGNAL MODE : MODE_TYPE := mTFR_CMD;
+
+  TYPE STATE_TYPE IS (sIDLE, sSETTING, sWAITING, sSTOPP);
+  SIGNAL STATE : STATE_TYPE := sIDLE;
+
+  SIGNAL wr_n_internal : std_logic := '0';
+
+  signal en_delay : std_logic := '0';
+
+begin
+  errors_tot <= std_logic_vector(to_unsigned(errors_tot_int, errors_tot'length));
+
+  errors_index <= std_logic_vector(to_unsigned(errors_index_int, errors_index'length));
+
+  fifo_tfr_cmd_index_int <= to_integer(unsigned(fifo_tfr_cmd_index));
+  fifo_rx_data_index_int <= to_integer(unsigned(fifo_rx_data_index));
+
+  fifo_tfr_cmd_amnt <= std_logic_vector(to_unsigned(fifo_tfr_cmd_amnt_int, fifo_tfr_cmd_amnt'length));
+  fifo_rx_data_amnt <= std_logic_vector(to_unsigned(fifo_rx_data_amnt_int, fifo_rx_data_amnt'length));
+
+  op_cnt <= std_logic_vector(to_unsigned(op_cnt_int, op_cnt'length));
+  
+  p_main: process(CLK)
+  begin
+    if rising_edge(CLK) then
+      if RST = '1' then
+        fifo_tfr_cmd <= (others => (others => '0'));
+        
+        fifo_tfr_cmd_amnt_int <= 0;
+        
+        fifo_tfr_cmd_index <= (others => '0');
+
+        stopp_prior_tfr_cmd <= '0';
+        stopp_amnts <= 0;
+
+        errors_tot_int <= 0;
+        errors_index_int <= 0;
+        errors_cnt <= 0;
+
+        op_cnt_int <= 0;
+
+        fast_mode <= '0';
+        standard_mode <= '1';
+
+        STATE <= sIDLE;
+        MODE <= mTFR_CMD;
+
+        done_rising <= '0';
+        done_internal <= '0';
+        idle_internal <= '0';
+        no_ack_internal <= '0';
+        wr_n_internal <= '0';
+        
+        EN <= '0';
+        BAUD_RATE <= "10100111";
+        baud_rate_now <= "10100111";
+        WR_N <= '0';
+        WR_BYTE <= (others => '0');
+        STOPP <= '0';
+      else
+        if chipselect = '1' and wr = '1' then
+          case address is
+            when "000" =>
+              MODE <= mTFR_CMD;
+              if (writedata(0) = '1') and fifo_tfr_cmd_amnt_int < 15 and stopp_prior_tfr_cmd = '1' and writedata(8) = '1' then
+                --INSTANT_READ--
+                fifo_tfr_cmd(fifo_tfr_cmd_amnt_int)(7 downto 0) <= writedata(7 downto 0);
+                fifo_tfr_cmd(fifo_tfr_cmd_amnt_int + 1)(9 downto 0) <= '1' & writedata(8 downto 0);
+                fifo_tfr_cmd_amnt_int <= fifo_tfr_cmd_amnt_int + 2;
+              elsif writedata(0) = '1' and fifo_tfr_cmd_amnt_int < 15 and stopp_prior_tfr_cmd = '1' then
+                fifo_tfr_cmd(fifo_tfr_cmd_amnt_int)(7 downto 0) <= writedata(7 downto 0);
+                fifo_tfr_cmd(fifo_tfr_cmd_amnt_int+1)(9) <= '1';
+                fifo_tfr_cmd_amnt_int <= fifo_tfr_cmd_amnt_int + 1;
+              elsif fifo_tfr_cmd_amnt_int < 15 then
+                fifo_tfr_cmd(fifo_tfr_cmd_amnt_int)(8 downto 0) <= writedata(8 downto 0);
+                if writedata(8) = '1' then
+                  stopp_prior_tfr_cmd <= '1';
+                else
+                  stopp_prior_tfr_cmd <= '0';
+                end if;
+                fifo_tfr_cmd_amnt_int <= fifo_tfr_cmd_amnt_int + 1;
+              end if;
+  
+              if writedata(8) = '1' then
+                stopp_amnts <= stopp_amnts + 1;
+              end if;
+            when "001" =>
+              MODE <= mRX_DATA;
+            when "010" =>
+              MODE <= mCTRL;
+              if writedata(31) = '1' then
+                standard_mode <= '1';
+                fast_mode <= '0';
+              elsif writedata(8) = '1' then
+                standard_mode <= '1';
+                fast_mode <= '0';
+              elsif writedata(9) = '1' then
+                standard_mode <= '0';
+                fast_mode <= '1';
+              else
+                baud_rate_cstm <= writedata(7 downto 0);
+              end if;
+            when "011" =>
+              MODE <= mSTATUS;
+              if writedata(31) = '1' then
+                errors_index_int <= 0;
+                errors_tot_int <= 0;
+              end if;
+            when "100" =>
+              MODE <= mTFR_CMD_FIFO;
+              if writedata(31) = '1' then
+                fifo_tfr_cmd_amnt_int <= 0;
+                fifo_tfr_cmd_index <= (others => '0');
+                fifo_tfr_cmd <= (others => (others => '0'));
+              else
+                fifo_tfr_cmd_index <= writedata(3 downto 0);
+              end if;
+            when "101" =>
+              MODE <= mRX_DATA_FIFO;
+              
+            when "110" =>
+              MODE <= mOP_CNT;
+              if writedata(31) = '1' then
+                op_cnt_int <= 0;
+              end if;
+            when others =>
+          end case; 
+
+        else
+          done_internal <= DONE;
+          idle_internal <= IDLE;
+          case STATE is
+            when sIDLE =>
+              WR_N <= '0';
+              wr_n_internal <= '0';
+              errors_cnt <= 0;
+              if stopp_amnts > 0 and IDLE = '1' then 
+                STATE <= sSETTING;
+              end if;
+ 
+            when sSETTING =>
+                WR_BYTE <= fifo_tfr_cmd(0)(7 downto 0);
+                fifo_tfr_cmd(14 downto 0) <=  fifo_tfr_cmd(15 downto 1);
+                fifo_tfr_cmd(15) <= x"00000000";
+                fifo_tfr_cmd_amnt_int <= fifo_tfr_cmd_amnt_int - 1;
+                STOPP <= fifo_tfr_cmd(0)(8);
+                stopp_internal <= fifo_tfr_cmd(0)(8);
+
+                if fifo_tfr_cmd(0)(9) = '1' then
+                  WR_N <= '1';
+                  wr_n_internal <= '1';
+                end if;
+
+                STOPP <= fifo_tfr_cmd(0)(8);
+                stopp_internal <= fifo_tfr_cmd(0)(8);
+
+                EN <= '1';
+                STATE <= sWAITING;
+
+
+
+                if standard_mode = '1' then
+                  BAUD_RATE <= baud_standard_mode;
+                  baud_rate_now <= baud_standard_mode;
+                elsif fast_mode = '1' then
+                  BAUD_RATE <= baud_fast_mode;
+                  baud_rate_now <= baud_fast_mode;
+                else
+                  BAUD_RATE <= baud_rate_cstm;
+                  baud_rate_now <= baud_rate_cstm;
+                end if;
+
+
+            when sWAITING =>
+              EN <= '0';
+              done_rising <= DONE;
+              if DONE = '1' and done_rising = '0' then
+                
+                no_ack_internal <= NO_ACK;
+                errors_cnt <= errors_cnt + 1;
+
+                if NO_ACK = '1' then
+                  errors_index_int <= errors_cnt;
+                  errors_tot_int <= errors_tot_int + 1;
+                end if;
+
+                op_cnt_int <= op_cnt_int + 1;
+
+
+                if stopp_internal = '1' then
+                  STATE <= sSTOPP;
+                  stopp_amnts <= stopp_amnts - 1;
+                else
+                  STATE <= sSETTING;
+                  STOPP <= fifo_tfr_cmd(0)(8);
+                  stopp_internal <= fifo_tfr_cmd(0)(8);
+                end if;
+
+              end if;
+
+            when sSTOPP =>
+              if IDLE = '1' then
+                WR_BYTE <= fifo_tfr_cmd(0)(7 downto 0);
+                STATE <= sIDLE;
+              end if;
+          
+          end case;
+        end if;
+      end if;
+    end if;
+  end process p_main;
+  
+  chipselect_rising <= chipselect;
+  p_read: process(CLK, RST, chipselect, rd, wr, address, IDLE, DONE, NO_ACK, RD_BYTE, fifo_tfr_cmd_amnt_int, baud_rate_now)
+  begin
+    if RST = '1' then
+      readdata <= (others => '0');
+      fifo_rx_data <= (others => (others => '0'));
+      fifo_rx_data_amnt_int <= 0;
+      fifo_rx_data_index <= (others => '0');
+
+    elsif wr_n_internal = '1' and DONE = '1' and done_rising = '0' then
+      fifo_rx_data(fifo_rx_data_amnt_int)(7 downto 0) <= RD_BYTE;
+      fifo_rx_data_amnt_int <= fifo_rx_data_amnt_int + 1;
+    else 
+      case address is
+        when "000"=>
+          if fifo_tfr_cmd_amnt_int > 0 then
+            readdata <= fifo_tfr_cmd(fifo_tfr_cmd_amnt_int - 1);
+          else
+            readdata <= x"00000000";
+          end if;
+
+        when "001" =>
+          readdata <= fifo_rx_data(0);
+          if chipselect = '1' and chipselect_rising = '0' then
+            fifo_rx_data(14 downto 0) <= fifo_rx_data(15 downto 1);
+            fifo_rx_data(15) <= x"00000000";
+            if fifo_rx_data_amnt_int > 0 and fifo_rx_data_amnt_int < 15 then
+              fifo_rx_data_amnt_int <= fifo_rx_data_amnt_int - 1;
+            end if; 
+          end if;
+
+        when "010" =>
+          readdata <= x"00000" & "00" & fast_mode & standard_mode & baud_rate_now;
+
+        when "011" => 
+          readdata <= x"00000" & '0' & no_ack_internal & done_internal & idle_internal & errors_index & errors_tot;
+
+        when "100" =>
+          readdata <= x"00" & fifo_tfr_cmd(fifo_tfr_cmd_index_int)(15 downto 0) & fifo_tfr_cmd_index & fifo_tfr_cmd_amnt;  
+
+        when "101" =>
+          if chipselect = '1' then
+            if rd = '1' then
+              readdata <= x"00" & fifo_rx_data(fifo_rx_data_index_int)(15 downto 0) & fifo_rx_data_index & fifo_rx_data_amnt;
+            elsif wr = '1' then
+              if writedata(31) = '1' then
+                    fifo_rx_data_amnt_int <= 0;
+                    fifo_rx_data_index <= (others => '0');
+                    fifo_rx_data <= (others => (others => '0'));
+                  else
+                    fifo_rx_data_index <= writedata(3 downto 0);
+              end if;
+            end if;
+          end if;
+
+        when "110" =>
+          readdata <= x"0000" & op_cnt;
+
+        when others =>
+      end case;
+ 
+        end if;
+  end process p_read;
+
+ 
+end architecture RTL;
+

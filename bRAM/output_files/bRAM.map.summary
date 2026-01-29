@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Jan 16 16:17:25 2026
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : bRAM
+Top-level Entity Name : bRAM
+Family : Cyclone IV E
+Total logic elements : 3,708
+    Total combinational functions : 1,762
+    Dedicated logic registers : 2,056
+Total registers : 2056
+Total pins : 37
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

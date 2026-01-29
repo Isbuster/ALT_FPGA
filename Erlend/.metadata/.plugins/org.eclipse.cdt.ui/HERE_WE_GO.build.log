@@ -1,0 +1,9 @@
+15:59:01 **** Incremental Build of configuration Nios II for project HERE_WE_GO ****
+wsl make all 
+Info: Building /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/Erlend/software/HERE_WE_GO_bsp/
+make --no-print-directory -C /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/Erlend/software/HERE_WE_GO_bsp/
+[BSP build complete]
+[HERE_WE_GO build complete]
+
+15:59:03 Build Finished (took 2s.456ms)
+

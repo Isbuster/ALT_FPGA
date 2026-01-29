@@ -1,0 +1,65 @@
+C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity I2C_MASTER_ALL
+-- Compiling architecture RTL of I2C_MASTER_ALL
+
+} {} {}} C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity I2C_MASTER
+-- Compiling architecture RTL of I2C_MASTER
+
+} {} {}} C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_REG.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_REG.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity I2C_MASTER_REG
+-- Compiling architecture RTL of I2C_MASTER_REG
+
+} {} {}} C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL_TB_UVVM.vhd {0 {vcom -work work -2008 -explicit -vopt -stats=none C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL_TB_UVVM.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading context declaration uvvm_util_context
+-- Loading package types_pkg
+-- Loading package adaptations_pkg
+-- Loading package MATH_REAL
+-- Loading package string_methods_pkg
+-- Loading package protected_types_pkg
+-- Loading package global_signals_and_shared_variables_pkg
+-- Loading package hierarchy_linked_list_pkg
+-- Loading package license_pkg
+-- Loading package ENV
+-- Loading package alert_hierarchy_pkg
+-- Loading package methods_pkg
+-- Loading package bfm_common_pkg
+-- Loading package rand_pkg
+-- Loading package func_cov_pkg
+** Error: (vcom-11) Could not find uvvm_util.sbi_bfm_pkg.
+** Error (suppressible): C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL_TB_UVVM.vhd(36): (vcom-1195) Cannot find expanded name "uvvm_util.sbi_bfm_pkg".
+** Error: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL_TB_UVVM.vhd(36): Unknown expanded name.
+** Note: C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/I2C_MASTER_ALL_TB_UVVM.vhd(39): VHDL Compiler exiting
+
+} {24.0 25.0 26.0 27.0} {}} C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/dff_synk.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none C:/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MASTER_ALL/dff_synk.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity dff_synk
+-- Compiling architecture comp of dff_synk
+
+} {} {}}

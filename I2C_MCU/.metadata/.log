@@ -1,0 +1,359 @@
+!SESSION 2025-05-08 21:34:08.459 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_392
+java.vendor=Temurin
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/23.1std/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/23.1std/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2025-05-08 21:35:03.794
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-05-08 21:36:08.377
+!MESSAGE Indexed 'KJIPPER_TAK_bsp' (79 sources, 60 headers) in 1.17 sec: 1,187 declarations; 2,446 references; 110 unresolved inclusions; 6 syntax errors; 191 unresolved names (5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-05-08 21:36:19.010
+!MESSAGE Indexed 'KJIPPER_TAK' (1 sources, 0 headers) in 0.004 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 21:53:41.890
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 21:53:43.880
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 21:54:09.783
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 21:54:10.461
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 21:54:12.415
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:02:04.182
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:02:04.844
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:02:06.823
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:04:17.393
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:04:18.047
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:04:20.014
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:09:01.849
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:09:02.507
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:09:04.477
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:16:56.660
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:16:57.327
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:16:59.298
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:18:05.784
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:18:06.450
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:18:08.432
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:39:11.729
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:39:12.388
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:39:14.411
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:40:01.565
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:40:02.212
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:40:04.206
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:42:16.148
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:42:16.814
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:42:18.111
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:42:18.584
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2025-05-08 22:42:29.661
+!MESSAGE Failed Executing: [wsl nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 4 0 2025-05-08 22:42:29.667
+!MESSAGE Failed Executing: [wsl nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2025-05-08 22:42:29.676
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:42:30.199
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:43:43.477
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:43:45.492
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:46:46.890
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:46:47.557
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-08 22:46:49.536
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:21:47.049
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:21:47.640
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:21:49.644
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:23:10.096
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:23:10.750
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:23:12.718
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:25:25.528
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:25:26.479
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:25:28.443
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:49:31.703
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:49:33.267
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:52:47.271
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:52:47.943
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 09:52:50.846
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:13:09.033
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:13:09.704
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:13:12.393
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:16:26.756
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:16:29.212
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:17:10.949
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:17:11.608
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:17:13.571
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:19:54.146
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:19:56.582
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:20:25.604
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:20:27.692
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:22:43.138
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:22:45.257
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:29:14.324
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:29:15.888
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:35:21.057
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:35:23.069
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK/KJIPPER_TAK.elf]
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-05-09 10:54:14.883
+!MESSAGE Indexed 'KJIPPER_TAK_2_bsp' (79 sources, 108 headers) in 0.935 sec: 2,376 declarations; 4,297 references; 88 unresolved inclusions; 6 syntax errors; 169 unresolved names (2.5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-05-09 10:54:16.163
+!MESSAGE Indexed 'KJIPPER_TAK_2' (1 sources, 0 headers) in 0.003 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:56:21.494
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:56:23.973
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:57:00.792
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:57:03.246
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:57:40.213
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 10:57:42.650
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 11:00:59.897
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 11:01:01.896
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 12:47:55.477
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 12:47:55.714
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 12:47:57.860
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 12:50:10.027
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 12:50:10.702
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 12:50:13.169
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:10:11.636
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:10:12.308
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:10:14.900
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:10:50.675
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:10:51.344
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:10:53.840
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:15:25.521
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:15:26.200
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:15:28.726
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:19:23.465
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:19:24.225
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:19:26.735
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:24:04.353
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:24:05.022
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:24:07.558
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:24:48.344
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:24:49.016
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:24:51.533
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:30:03.621
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:30:05.184
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:31:32.379
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-05-09 13:31:33.941
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /mnt/c/Users/jacob/Documents/Quartus/Prosjektoppgave/I2C_MCU/software/KJIPPER_TAK_2/KJIPPER_TAK_2.elf]
